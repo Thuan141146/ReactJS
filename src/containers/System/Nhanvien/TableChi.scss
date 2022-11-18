@@ -1,0 +1,38 @@
+
+#TableChi {
+.col-5{
+  font-size: 18px;
+  color:  #333;
+  font-family: 'haha';
+  margin-bottom: 10px;
+}
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 15px;
+
+  }
+  .tong-chi{
+    padding-bottom: 10px;
+    font-size: 25px;
+    color:  #333;
+    font-family: 'haha';
+  }
+  
+  #TableChi td, 
+  #TableChi th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #TableChi tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #TableChi tr:hover {background-color: #ddd;}
+  
+  #TableChi th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #0071ba;
+    color: white;
+  }

@@ -1,0 +1,33 @@
+.chi-body{
+    .container{
+        .row{
+            .anh{
+                padding-top: 10px;
+                .preview-img-container{
+
+                    .upload{
+                        border: 1px solid #d3d8de;
+                        padding: 5px;
+                        border-radius: 4px;
+                        cursor: pointer;
+                        &:hover{
+                            opacity: 0.7;
+                        }
+                    }  
+                    .preview-image{
+                        width: 100%;
+                        border: 1px solid #d3d8de;
+                        height: 100px;
+                        margin-top: 10px;
+                        border-radius: 4px;
+                        background: center center no-repeat;
+                        background-size: contain;
+                        cursor: pointer;
+                    } 
+                
+                }
+            }
+        }
+    }
+   
+}

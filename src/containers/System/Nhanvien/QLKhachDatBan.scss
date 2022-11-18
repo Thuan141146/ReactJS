@@ -1,0 +1,65 @@
+div._loading_overlay_wrapper {
+  position: unset;
+  ._loading_overlay_overlay {
+    z-index:1000000 ;
+  }
+  }
+.manage-khachdatban-container{
+
+
+    .khachdatban-body{
+        margin-top: 50px;
+        padding: 0 20px ;
+
+        .table-khachdatban{
+          .no-kh{
+            font-size:18px;
+            text-align: center;
+            
+          }
+          table {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 15px;
+        
+          }
+          
+          table td, 
+          table th {
+            border: 1px solid #ddd;
+            padding: 8px;
+          }
+          
+          table tr:nth-child(even){background-color: #f2f2f2;}
+          
+          table tr:hover {background-color: #ddd;}
+          
+          table th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #0071ba;
+            color: white;
+          }
+        }
+        button {
+          border: none;
+          outline: none;
+          cursor: pointer;
+        }
+        .btn-confirm{
+          margin-right: 10px;
+          height: 30px;
+          background: #1fcf13;
+          border-radius: 5px;
+        }
+        .btn-huydat{
+          margin-right: 10px;
+          height: 30px;
+          background: #df0000c7;
+          border-radius: 5px;
+        }
+    }
+
+}

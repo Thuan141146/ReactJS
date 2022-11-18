@@ -1,0 +1,388 @@
+.back-detailsanpham{
+    height: auto;
+    background-size: 100% 200%;
+    background: url(../../../assets/event/home_cloudfee_bg_d0aafa7f96c746329eaa1451a8441448.png);
+    .sukien-detail-container{
+        height: 100%;
+         //border: 1px solid red;
+        // width: 100%;
+         margin: 0 100px;
+        padding-top: 35px;
+        background-size: 100% 200%;
+        .intro-sukien{
+            display: flex;
+            height: 500px;
+            // border: 8px solid rgb(55, 0, 255);
+            padding-left: 30px;
+            align-items: center;
+            .content-left{
+                width: 30%;
+               // border: 8px solid rgb(55, 0, 255);
+                height: 400px;
+                background: center center no-repeat;
+                background-size: 100% 100%;
+                border-radius: 15px;
+    
+            }
+            .content-right{
+              // border: 8px solid rgb(55, 0, 255);
+                width: 65%;
+                height: 450px;
+                display: flex;
+                flex-direction: column;
+                padding-left: 30px;
+                align-items: center;
+                // margin-top: 160px;
+                .up{
+                    font-weight: 600;
+                   // border: 8px solid rgb(55, 0, 255);
+                    font-size: 40px;
+                    color: #febf3e;
+                    text-shadow: 1px 1px 1px #333;
+                    font-family: 'haha';
+                    line-height: 1.1;
+                    // text-align: center;
+                }
+                .down{
+                    font-size: 30px;
+                   // border: 8px solid rgb(55, 0, 255);
+                    color:  #333;
+                  //padding-top:  20px;
+                    font-family: 'haha';
+                    // text-align: center;
+                    .gia{
+                        font-size: 28px;
+                        margin: 0 20px;
+                    }
+                    
+                }
+                .down1{
+                    font-size: 30px;
+                   // border: 8px solid rgb(55, 0, 255);
+                    color:  #333;
+                    //padding-top:  20px;
+                    font-family: 'haha';
+                    text-align: center;
+                 
+                    .ten-giam{
+                        font-size: 28px;
+                        color:  #333;
+                        font-family: 'haha'; 
+                    }
+                    .ngay-giam{
+                        font-size: 28px;
+                        color:  #333;
+                        font-family: 'haha'; 
+                    }
+                    .giam-gia{
+                        cursor: pointer;
+                        .giam{
+                            //border: 8px solid rgb(55, 0, 255);
+                            font-size: 28px;
+                            color:  #333;
+                            font-family: 'haha'; 
+                            width: 250px;
+                            height: 45px;
+                            margin-left:130px;
+                            margin-right:130px;
+                            margin-top: 10px;
+                            margin-bottom: 10px;
+                           background-color:#febf3e;
+                           border-radius: 13px;
+                           cursor: pointer;
+                           &:hover{
+                            opacity: 0.7;
+                        }
+                        }
+                    }
+                 
+                    
+                }
+                .size{
+                    padding-left: 15px;
+                    font-size: 25px;
+                   // border: 8px solid rgb(55, 0, 255);
+                    color:  #333;
+                    line-height: 1.1;
+                    padding-top: 5px;
+                    font-family: 'haha';
+                }
+                .size-content{
+                
+                    font-size: 25px;
+                    // border: 1px solid rgb(55, 0, 255);
+                    color:  #333;
+                    line-height: 1.1;
+                    margin-top: 5px;
+                    font-family: 'haha';
+                    height: 100px;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    .khung{
+                        margin: 0 15px 20px;
+                        padding-top: 8px;
+                
+                        .tensize{
+                            height: 30px;
+                            width: 238px;
+                            border: 2px solid #333;
+                            border-radius: 13px;
+                            //margin-left: 5px;
+                            //margin-right: -15px;
+                            text-align: center;
+                            cursor: pointer;
+                            &.active{
+                               background:#febf3e;
+                               height: 30px;
+                               width: 210px;
+                               border: 2px solid #333;
+                               border-radius: 13px;
+                            }
+                        } 
+                    }
+                 
+                }
+                .text{
+                        font-size: 25px;
+                        // border: 1px solid rgb(55, 0, 255);
+                        color:  #333;
+                        line-height: 1.1;
+                        margin-bottom: 5px;
+                        font-family: 'haha'; 
+                
+                }
+               
+                .component-quantity-input{
+                
+                    span{
+                        border: none;
+                    }
+                    input{
+                        border-radius: 5px;
+                        width: 45px;
+                        height: 40px;
+                        // border: 1px solid  #333 ;
+                    }
+                    button{
+                        border-radius: 5px;
+                        width: 45px;
+                        height: 40px;
+                        background-color: #febf3e;
+                        font-family: 'haha';
+                        color:  #333;
+                        font-size: 25px;
+                        border: none;
+                        margin-bottom: 15px;
+                    }
+                }
+
+                .add-to-cart{
+                    button{
+                   
+                        border-radius: 15px;
+                        width: 270px;
+                        height: 40px;
+                        background-color: #febf3e;
+                        font-family: 'haha';
+                        color:  #333;
+                        font-size: 25px;
+                        border: none;
+                    }
+                }
+             
+            
+            }
+    
+        }
+        .mota{
+            padding-left: 5px;
+            color:  #333;
+            line-height: 1.1;
+            margin-top: 60px;
+            font-family: 'haha';
+            font-size: 25px;
+            border-top: 1px solid ;
+            height: auto;
+            .mota-title{
+                padding-left: 35px;
+                color:  #333;
+                line-height: 1.1;
+                padding-top: 10px;
+                font-family: 'haha';
+                font-size: 25px;
+                height: auto;
+                
+            }
+    
+        }
+        .detail-info-sukien{
+            padding-top: 30px;
+            padding-left: 30px;
+            font-size: 20px;
+            color:  #333;
+            font-family: 'haha';
+            line-height: 1.1;
+            padding-top: 10px;
+            h3{
+                 font-size: 17px;
+            }
+       img{
+        width: 100%;
+    
+        border-radius: 30px;
+       }
+    
+        }
+        .sp-lienquan{
+
+            .lq-title{
+                padding-left: 35px;
+                color:  #333;
+                line-height: 1.1;
+                padding-top: 10px;
+                font-family: 'haha';
+                font-size: 25px;
+                border-top: 1px solid;
+                
+            }
+            .sanpham-content{
+                //padding-top: 40px;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                margin-left: 5px;
+                margin-right: -15px;
+               // border: 10px solid blue;
+                .view-sp{
+                    //border: 10px solid blue;
+                    margin: 0 15px 20px;
+                    padding-top: 30px;
+                    .anh-sp{ 
+                       // border: 10px solid blue;
+                       // background: url(../../../assets/speacil/caphesuacra.webp) ;
+                        height: 300px;
+                        width: 300px;
+                        text-shadow: 1px 1px 1px #333;
+                        border-radius: 20px;
+                        background-size: 100% 100%;
+                        cursor: pointer;
+                        // border: 1px solid blue;
+                       
+                     
+                    }
+                    .ten-sp{
+                        // border: 1px solid blue;
+                        height: 30px;
+                        width: 300px;
+                        text-align: center;
+                        color:  #333;
+                        font-family: 'haha';
+                        font-size: 22px;
+                        cursor: pointer;
+                    }
+                    .gia{
+                        // border: 1px solid blue;
+                        background-color: c;
+                        height: 30px;
+                        width: 300px;
+                        text-align: center;
+                        color:  #333;
+                        font-family: 'haha';
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+        .danh-gia{
+            border-top: 1px solid gray;
+            padding-top: 10px;
+            .title-sanpham{
+                font-family: 'haha';
+                font-size: 25px;
+                color:  #333;
+                margin-bottom: 5px;
+            }
+            .diem{
+                font-size: 40px;
+                color: #febf3e;
+                text-shadow: 1px 1px 1px #333;
+                font-family: 'haha';
+                line-height: 1.1;
+                margin-bottom: 15px;
+            }
+            .col-6 {
+                label{
+                    font-family: 'haha';
+                    font-size: 25px;
+                    color:  #333;
+                    margin-bottom: 15px;
+                }
+            }
+            .button-danhgia{
+               padding-top: 20px;
+                font-family: 'haha';
+                font-size: 25px;
+                color:  #333;
+                button{
+                    height: 50px;
+                    width: 180px;
+                    border: none;
+                    background-color: #febf3e;
+                    border-radius: 5px;
+                    margin-bottom: 100px;
+
+                }
+            }
+        }
+        .danhgia-container{
+            //border: 1px solid red;
+            width: 50%;
+            .container{
+               // border: 1px solid ;
+                .row{
+                    .col-6{
+                        // padding-right: 190px;
+                        button{
+                         
+                            font-family: 'haha';
+                            font-size: 25px;
+                            color:  #333;
+                            height: 50px;
+                            width: 180px;
+                            background-color: #febf3e;
+                            border-radius: 8px;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+            .danhgia-info{
+               border: 1px solid gray; 
+               font-size: 25px;
+               color:  #333;
+               font-family: 'haha';
+               margin: 0 15px 20px;
+               padding-left: 10px;
+               border-radius: 15px;
+              
+            .name-report{
+                .member-name{
+                   
+                }
+                button{
+                    float: right;
+                    font-size: 20px;
+                }
+                .rating{
+               
+                    
+                }
+                .comment{
+                   // border-bottom: 1px solid gray;
+                }
+               }
+            }
+        }
+    }
+}

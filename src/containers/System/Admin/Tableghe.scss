@@ -1,0 +1,26 @@
+
+#Tableghe {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 15px;
+
+  }
+  
+  #Tableghe td, 
+  #Tableghe th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #Tableghe tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #Tableghe tr:hover {background-color: #ddd;}
+  
+  #Tableghe th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #0071ba;
+    color: white;
+  }

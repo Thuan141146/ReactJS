@@ -1,0 +1,47 @@
+.sanpham-content{
+    //padding-top: 40px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 5px;
+    margin-right: -15px;
+   // border: 10px solid blue;
+    .view-sp{
+        //border: 10px solid blue;
+        margin: 0 15px 20px;
+        padding-top: 30px;
+        .anh-sp{ 
+           // border: 10px solid blue;
+           // background: url(../../../assets/speacil/caphesuacra.webp) ;
+            height: 300px;
+            width: 300px;
+            text-shadow: 1px 1px 1px #333;
+            border-radius: 20px;
+            background-size: 100% 100%;
+            cursor: pointer;
+            // border: 1px solid blue;
+           
+         
+        }
+        .ten-sp{
+            // border: 1px solid blue;
+            height: 30px;
+            width: 300px;
+            text-align: center;
+            color:  #333;
+            font-family: 'haha';
+            font-size: 22px;
+            cursor: pointer;
+        }
+        .gia{
+            // border: 1px solid blue;
+            background-color: c;
+            height: 30px;
+            width: 300px;
+            text-align: center;
+            color:  #333;
+            font-family: 'haha';
+            font-size: 20px;
+        }
+    }
+}

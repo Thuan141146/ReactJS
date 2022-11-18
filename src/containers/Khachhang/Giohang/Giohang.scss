@@ -1,0 +1,317 @@
+.back-giohang{
+    background: url(../../../assets/event/home_cloudfee_bg_d0aafa7f96c746329eaa1451a8441448.png);
+    
+    // border: 6px solid rgb(0, 255, 47);
+    height: 100%;   
+    width: 100%;
+    .giohang{
+        height: auto; 
+        width: auto; 
+        line-height: 1.1;
+        text-shadow: 1px 1px 1px #333;
+        color: #febf3e;
+        font-family: 'haha';
+        font-size: 40px;
+        padding-top: 30px;
+        text-align: center;
+    } 
+    .giohang-container{
+        
+        margin-top: 30px;
+        // border: 1px solid red;
+        height: 40px;
+        .header{
+        // border: 1px solid red;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            font-family: 'haha';
+            color: #333;
+            font-size: 22px;
+            text-align: center;
+            height: 60px;
+            margin-left: 50px;
+            .header1{
+                width: auto;
+                // border: 1px solid;
+                margin-left: 10px;
+
+            }
+            .header2{
+                margin: 0 137px 1px;
+                width: auto;
+                // border: 1px solid;
+            }
+            .header3{
+                margin: 0 -20px 1px;
+                width: auto;
+                // border: 1px solid;
+            }
+            .header4{
+                margin: 0 57px 1px;
+                width: auto;
+                // border: 1px solid;
+            }
+            .header5{
+                margin: 0 45px 1px;
+                width: 10%;
+                // border: 1px solid;
+            }
+            .header6{
+                margin: 0 15px 1px;
+                width: 10%;
+                // border: 1px solid;
+            }
+          
+            .header7{
+                margin: 0 47px 1px;
+                width: auto;
+                // border: 1px solid;
+            }
+
+
+
+        }
+
+        .intro-giohang{
+                background: url(../../../assets/event/home_cloudfee_bg_d0aafa7f96c746329eaa1451a8441448.png);
+            
+                // border: 6px solid rgb(0, 255, 47);
+                background-size: 100% 100%;
+                height: auto;   
+                margin-top: 2px;
+                display: flex;
+                height: auto;
+                // border: 8px solid rgb(55, 0, 255);
+                .content-left{
+                    // border: 1px solid;
+                    width: 70%;
+                    height: auto;
+                    margin: 0 15px 20px;
+                
+                    
+
+                    .view-mon{
+                        
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        height:120px;
+                        width: 100%;
+                        border: 1px solid gray;
+                        border-radius: 12px;
+                        align-items: center;
+                       margin-bottom: 10px;
+                       &.active{
+                        background: rgb(25, 240, 223);
+                       
+                    }
+                        .mon-left{
+                            margin: 0 20px 4px;
+                            width: 9%;
+                            height: 100px;
+                            //background: url(../../../assets/speacil/1655199351_dau-man-muoi-aloe-vera_bb7151606f5742e8a85f7a19d976c361.webp);
+                            //background: center center no-repeat;
+                            background-size: 100% 100%;
+                            cursor: pointer;
+                            border-radius: 15px;
+                
+                        }
+                        .mon-right1{
+                            margin: 0 65px 0px;
+                            padding-top: 10px;
+                            // border: 2px solid red;
+                            width: 22%;
+                            height: 70px;
+                            font-family: 'haha';
+                            color: #333;
+                            font-size: 18px;
+                            text-align: center;
+                            border-radius: 15px;
+                        }
+                        .mon-right2{
+                            padding-top: 0px;
+                            margin: 0 -10px -25px;
+                            // border: 2px solid red;
+                            width: 5%;
+                            height: 70px;
+                            font-family: 'haha';
+                            color: #333;
+                            font-size: 18px;
+                            text-align: center;
+                            border-radius: 15px;
+                        }
+                        .mon-right3{
+                            margin: 0 55px 5px;
+                            padding-top: 10px;
+                            //border: 2px solid red;
+                            width: 5%;
+                            height: 70px;
+                            font-family: 'haha';
+                            color: #333;
+                            font-size: 18px;
+                            text-align: center;
+                            border-radius: 15px;
+                        }
+                        .mon-right4{
+                            margin: 0 35px 0px;
+                            padding-top: 10px;
+                             //border: 2px solid red;
+                            width: 20%;
+                            height: 70px;
+                            font-family: 'haha';
+                            color: #333;
+                            font-size: 18px;
+                            text-align: center;
+                            border-radius: 15px;
+                        }
+                        .mon-right5{
+                            margin: 0 0px 30px;
+                            padding-top: 10px;
+                            // border: 2px solid red;
+                            width: 5%;
+                            height: 70px;
+                            font-family: 'haha';
+                            color: #333;
+                            font-size: 18px;
+                            text-align: center;
+                            border-radius: 15px;
+                            button{
+                                background-color: red;
+                                font-size: 21px;
+                                border-radius: 10px;
+                                cursor: pointer;
+                            }
+                        }
+
+                    }
+
+            
+                }
+                .content-right{
+                    padding-top: 23px;
+                    border: 1px solid;
+                    width: 27%;
+                    height: auto;
+                    display: flex;
+                    flex-direction: column;
+                    padding-right: 13px;
+                    padding-left: 13px;
+                    padding-bottom: 10px;
+                    font-family: 'haha';
+                    color: #333;
+                    font-size: 21px;
+                    border-radius: 15px;
+                    .ten-kh{
+                        width: 100%;
+                        height: auto;
+                        margin-bottom: 10px;
+                    }
+                    .sdt-kh{
+                        width: 100%;
+                        height: auto;
+                        margin-bottom: 10px;
+                    }
+                    .chon-dc{
+                        height: auto;
+                        
+                        border-radius: 8px;
+                        .dc-kh{
+                            width: 97%;
+                            height: auto;
+                            border: 2px solid gray;
+                            margin-bottom: 10px;
+                            padding-left:5px ;
+                            border-radius: 8px;
+                            margin-left: 5px;
+    
+                        }
+                    }
+               
+                    .phi-ship{
+                        width: 100%;
+                        height: auto;
+                        border-bottom: 2px solid gray;
+                        margin-bottom: 20px;
+                    }
+                    .Tongtien{
+                        width: 100%;
+                        height: auto;
+                        margin-bottom: 20px;
+                        border-bottom: 2px solid gray;
+                    }
+                    .pt-tt{
+                        width: 100%;
+                        height: auto;
+                        margin-bottom: 20px;
+                        border-bottom: 2px solid gray;
+                        .form-control {
+                            font-size: 1.5rem;
+                            font-family: 'haha';
+                            color: #333;
+                            background-color: transparent !important;
+                            border: none;
+                        }
+                        .btn-pttt{
+
+                        }
+                    }
+                    .don-kh{
+                        width: 100%;
+                        text-align: center;
+                        height: 40px;
+                        border: 1px solid gray;
+                        margin-bottom: 20px;
+                        border-radius: 10px;
+                        &:hover{
+                            background-color: aqua;
+                        }
+
+                    }
+                    
+                    
+
+                    .btn-dat{
+                        text-align: center;
+                        margin-top: 20px;
+                        background-color: #febf3e;
+                        border-radius: 15px;
+                        button{
+                            background-color: #febf3e;
+                            border: none;
+                            outline: none;
+                            border-radius: 15px;
+                            height: 73px;
+                            width: 305px;
+                            cursor: pointer;
+                            &:hover{
+                                opacity: 0.6;
+                            }
+                        }
+                    }
+                    .btn-vnpay{
+                        text-align: center;
+                        margin-top: 20px;
+                        background-color:#febf3e;
+                        border-radius: 15px;
+                        button{
+                            background: url(../../../assets/speacil/logo-primary.55e9c8c.svg);
+    
+                            // border: 6px solid rgb(0, 255, 47);
+                            background-size: 100% 100%;
+                            border: none;
+                            outline: none;
+                            border-radius: 15px;
+                            height: 73px;
+                            width: 305px;
+                            cursor: pointer;
+                            &:hover{
+                                opacity: 0.6;
+                            }
+                        }
+                    }
+                   
+                }
+        }
+    }
+}

@@ -1,0 +1,302 @@
+.back-Allve{
+    background: url(../../../assets/event/home_cloudfee_bg_d0aafa7f96c746329eaa1451a8441448.png);
+
+    // border: 6px solid rgb(0, 255, 47);
+    background-size: 100% 100%;
+    height: 100%;   
+    .col-4 {
+        label{
+            font-family: 'haha';
+            color: #333;
+            font-size: 20px; 
+        }
+        margin-left: 20px;
+        margin-bottom: 30px;
+    }
+    .Allve{
+        height: auto; 
+        width: auto; 
+        line-height: 1.1;
+        text-shadow: 1px 1px 1px #333;
+        color: #febf3e;
+        font-family: 'haha';
+        font-size: 40px;
+        padding-top: 30px;
+        text-align: center;
+    } 
+    .Allve-container{
+        
+        margin-top: 30px;
+        // border: 1px solid red;
+        height: 40px;
+        .header{
+            // border: 1px solid red;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            font-family: 'haha';
+            color: #333;
+            font-size: 22px;
+            text-align: center;
+            height: 60px;
+            margin-left: 50px;
+            .header1{
+                width: auto;
+                // border: 1px solid;
+
+            }
+            .header2{
+                margin: 0 150px 1px;
+                width: auto;
+                // border: 1px solid;
+            }
+            .header3{
+                margin: 0 10px 1px;
+                width: auto;
+                // border: 1px solid;
+            }
+            .header4{
+                margin: 0 50px 1px;
+                width: auto;
+                // border: 1px solid;
+            }
+            .header5{
+                margin: 0 5px 1px;
+                width: 10%;
+                // border: 1px solid;
+            }
+          
+            .header6{
+                margin: 0 150px 1px;
+                width: auto;
+                // border: 1px solid;
+            }
+
+
+
+        }
+     
+        .intro-Allve{
+        
+                background: url(../../../assets/event/home_cloudfee_bg_d0aafa7f96c746329eaa1451a8441448.png);
+            
+                // border: 6px solid rgb(0, 255, 47);
+                background-size: 100% 100%;
+                height: auto;   
+                display: flex;
+                height: auto;
+                // border: 8px solid rgb(55, 0, 255);
+                .content-left{
+                    // border: 1px solid;
+                    width: 100%;
+                    height: auto;
+                    margin: 0 15px 20px;
+                    align-items: center;
+                  
+                    .view-mon{
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        height:120px;
+                        width: 99%;
+                        border: 1px solid gray;
+                        border-radius: 12px;
+                        align-items: center;
+                        margin-bottom: 10px;
+                        &:hover{
+                            background-color: aqua;
+                        
+                       
+                    }
+                        .mon-left{
+                            // border: 1px solid;
+                            margin: 0 60px 4px;
+                            width: auto;
+                            height: auto;
+                            font-family: 'haha';
+                            color: #333;
+                            font-size: 18px;
+                
+                        }
+                        .mon-right1{
+                            margin: 0 10px 0px;
+                            padding-top: 10px;
+                            // border: 2px solid red;
+                            width: 20%;
+                            height: 70px;
+                            font-family: 'haha';
+                            color: #333;
+                            font-size: 18px;
+                            text-align: center;
+                            border-radius: 15px;
+                        }
+                        .mon-right2{
+                            padding-top: 0px;
+                            margin: 0 30px -19px;
+                            // border: 2px solid red;
+                            width: auto;
+                            height: 70px;
+                            font-family: 'haha';
+                            color: #333;
+                            font-size: 18px;
+                            text-align: center;
+                            border-radius: 15px;
+                        }
+                        .mon-right3{
+                            margin: 0 95px 0px;
+                            padding-top: 10px;
+                            // border: 2px solid red;
+                            width: 5%;
+                            height: 70px;
+                            font-family: 'haha';
+                            color: #333;
+                            font-size: 18px;
+                            text-align: center;
+                            border-radius: 15px;
+                        }
+                        .mon-right4{
+                            margin: 0 15px 15px;
+                            padding-top: 10px;
+                            //  border: 2px solid red;
+                            width: 170px;
+                            height: 50px;
+                            font-family: 'haha';
+                            color: #333;
+                            font-size: 18px;
+                            text-align: center;
+                            border-radius: 15px;
+                            background-color:rgb(92, 230, 230);
+                            button{
+                                background-color: red;
+                                font-size: 21px;
+                                border-radius: 10px;
+                                cursor: pointer;
+                            }
+                        }
+
+                        .mon-right5{
+                            margin: 0 50px 0px;
+                            padding-top: 10px;
+                            // border: 2px solid red;
+                            width: auto;
+                            height: 70px;
+                            font-family: 'haha';
+                            color: #333;
+                            font-size: 18px;
+                            text-align: center;
+                            border-radius: 15px;
+                            button{
+                                margin: 0 15px 20px;
+                                background-color: red;
+                                font-size: 21px;
+                                border-radius: 10px;
+                                cursor: pointer;
+                                border: none;
+                                &:hover{
+                                    opacity: 0.6;
+                                }
+                            }
+                            .btn-huy{
+                                background-color: #ea1430;
+                                font-size: 21px;
+                                border-radius: 10px;
+                                cursor: pointer;
+
+                            }
+                            .btn-chitiet{
+                                background-color:#febf3e;
+                                font-size: 21px;
+                                border-radius: 10px;
+                                cursor: pointer;
+
+                            }
+                            
+                            
+                        }
+                    }
+
+            
+                }
+                .content-right{
+                    padding-top: 23px;
+                    border: 1px solid;
+                    width: 26%;
+                    height: 150px;
+                    display: flex;
+                    flex-direction: column;
+                    padding-right: 13px;
+                    padding-left: 13px;
+                    padding-bottom: 10px;
+                    font-family: 'haha';
+                    color: #333;
+                    font-size: 21px;
+                    border-radius: 15px;
+                    .ten-kh{
+                        width: 100%;
+                        height: auto;
+                        margin-bottom: 10px;
+                    }
+                    .sdt-kh{
+                        width: 100%;
+                        height: auto;
+                        margin-bottom: 10px;
+                    }
+                    .dc-kh{
+                        width: 100%;
+                        height: auto;
+                        
+                        margin-bottom: 20px;
+                    }
+                    .phi-ship{
+                        width: 100%;
+                        height: auto;
+                        border-bottom: 2px solid gray;
+                        margin-bottom: 20px;
+                    }
+                    .Tongtien{
+                        width: 100%;
+                        height: auto;
+                        margin-bottom: 20px;
+                        border-bottom: 2px solid gray;
+                    }
+                    .pt-tt{
+                        width: 100%;
+                        height: auto;
+                        margin-bottom: 20px;
+                        border-bottom: 2px solid gray;
+                        .form-control {
+                            font-size: 1.5rem;
+                            font-family: 'haha';
+                            color: #333;
+                            background-color: transparent !important;
+                            border: none;
+                        }
+                        .btn-pttt{
+
+                        }
+                    }
+                    
+
+                    .btn-dat{
+                        text-align: center;
+                        margin-top: 20px;
+                        background-color: #febf3e;
+                        border-radius: 15px;
+                        button{
+                            background-color: #febf3e;
+                            border: none;
+                            outline: none;
+                            border-radius: 15px;
+                            height: 73px;
+                            width: 305px;
+                            cursor: pointer;
+                            &:hover{
+                                opacity: 0.6;
+                            }
+                        }
+                    }
+                   
+                }
+        }
+    }
+}

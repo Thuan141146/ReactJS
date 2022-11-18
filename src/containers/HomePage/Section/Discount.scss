@@ -1,0 +1,84 @@
+.section-discount{
+background:url("../../../assets/discount/back2.png");
+height: 820px;
+width: 100%;
+border-radius: 50px;
+background-size: 100% 180%;
+    .discount-container{
+        padding:80px 0px;
+        display: flex;
+        flex-direction: column ;
+        .discount-header{ 
+            height: 80px;
+            margin-bottom: -110px;
+            padding-top: 5px;
+            padding-left: 20px;
+            padding-right: 50px;
+            .nen1{
+            height: 367px;
+            width: 367px;
+            background: url("../../../assets/discount/bk.png");
+            background-size: 110% 110%;
+            }
+            .nen2{
+                float: right;
+                height: 367px;
+                width: 367px;
+                background: url("../../../assets/discount/_creamy.png");
+                background-size: 110% 110%;
+            }
+            }
+            .text{
+                
+                .title{
+                    font-family: 'haha';
+                    color:#febf3e;
+                    line-height: 1.1;
+                    text-shadow: 1px 1px 1px #333;
+                    
+                    .logo-title{
+                        font-size: 60px;
+
+                    }
+                    .text-title{
+                        padding-top: 10px;
+                        line-height: 1.1;
+                        text-shadow: 1px 1px 1px #333;
+                        font-family: 'haha';
+                        font-size: 25px;
+
+                    }
+                
+                }
+
+        }
+        .text-new{
+            padding-top: 100px;
+            padding-left: 400px;
+            width: 70%;
+            // border: 1px solid red;
+            .title-new{
+                p{
+                    font-style: italic;
+                }
+                font-family: 'haha';
+                color:#493c30;
+                line-height: 1.1;
+                font-size: 25px;
+            }
+        }
+        .text-new1{
+            padding-top: 210px;
+            padding-left: 400px;
+            width: 75%;
+            // border: 1px solid red;
+            .title-new1{
+                font-family: 'haha';
+                color:#493c30;
+                line-height: 1.1;
+                font-size: 25px;
+            }
+        }
+    }
+}
+                

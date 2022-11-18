@@ -1,0 +1,61 @@
+{
+    "common": {
+        "add": "Thêm",
+        "edit": "Sửa",
+        "delete": "Xóa",
+        "decentralize": "Phân quyền",
+        "close": "Đóng",
+        "save": "Lưu",
+        "refresh": "Refresh",
+        "accept": "Chấp nhận",
+        "confirm": "Xác nhận",
+        "confirm-this-task": "Bạn có chắc chắn thực hiện tác vụ này?",
+        "fail-to-load-data": "Không thể tải về dữ liệu",
+        "unknown-error": "Có lỗi xảy ra",
+        "internal-server-error": "Lỗi kết nối",
+        "bad-request": "Yêu cầu không hợp lệ",
+        "forbiden-request": "Thông tin truyền vào không hợp lệ",
+        "fail-to-load-all-code": "Không thể tải về dữ liệu allcode",
+        "sum": "Tổng",
+        "date-range-invalid": "Khoảng thời gian không hợp lệ"
+    },
+    "menu": {
+        "admin": {
+            "manage-user": "Người dùng",
+            "manage-nv": "Quản lý nhân viên",
+            "manage-admin": "Quản lý Admin",
+            "manage-customer": "Quản lý Khách hàng",
+            "crud": "CRUD user",
+            "crud-redux": "Quản lý người dùng",
+            "manage-product": "Sản phẩm",
+            "manage-doanhmuc": "Quản lý danh mục",
+            "manage-sp": "Quản lý sản phẩm",
+            "manage-giasp": "Quản lý giá sản phẩm",
+            "manage-event": "Sự kiện",
+            "manage-dmsk": " Loại Sự kiện",
+            "manage-ctsk": " Chi tiết Sự kiện",
+            "manage-dh": "Đơn hàng",
+            "manage-vesk": "Quản lý đặt vé",
+            "manage-db": "Quản lý đặt bàn",
+            "manage-dsp": "Quản lý đơn hàng",
+            "manage-dt": "Doanh thu",
+            "manage-ctdt": "Quản lý doanh thu",
+            "manage-Khu": "Quản lý khu",
+            "manage-kv": "Quản lý khu vực",
+            "manage-ban": "Quản lý bàn",
+            "manage-km": "Quản lý khuyến mãi",
+            "manage-ghe": "Quản lý ghế",
+            "manage-ttghe": "Quản lý trạng thái ghế",
+            "manage-thongke": "Thống kê"
+        },
+        "nhanvien": {
+            "nhanvien-banhang": " Bán hàng",
+            "manage-tc": "Quản lý chi",
+            "manage-donhang": "Đơn hàng",
+            "manage-donve": "Đơn đặt vé",
+            "manage-datban": "Quản lý trạng thái bàn",
+            "manage-danhthu": "Danh Thu",
+            "manage-khachdatban": "Danh sách đặt bàn"
+        }
+    }
+}

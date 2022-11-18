@@ -1,0 +1,115 @@
+.danhthu-body{
+    float: right;
+    .row{ 
+
+       margin-top: 50px;
+        padding: 0 20px ;
+       .col-4{
+        margin-left: 10px;
+        font-size: 18px;
+       }
+        .col-3{
+            padding-top: 20px;
+            margin-bottom: 100px;
+            .timkiem{
+
+                button{
+                    border-radius: 5px;
+                    border: none;
+                    color: white;
+                    height: 35px;
+                    font-size: 18px;
+                    background-color:#0071ba;
+                    i{
+                        font-size: 20px;
+                    }
+                }
+            }
+        
+        }
+        .ct-danhthu{
+          
+            padding-top: 30px;
+            border: 1px solid;
+            height: 350px;
+            width: 420px;
+            font-family: 'haha';
+            color: #333;
+            font-size: 18px;
+            margin-left: 450px;
+            margin-right: 450px;
+            border-radius: 20px;
+            .tien-ban{
+                padding-top: 20px;
+                font-size: 19px;
+
+            }
+            .tong-chi{
+                padding-top: 10px;
+                font-size: 19px;
+            }
+            .giam-gia{
+              padding-top: 10px;
+              font-size: 19px;
+                border-bottom: 1px solid gray;
+
+            }
+            .thuc-thu{
+              padding-top: 10px;
+              font-size: 19px;
+
+
+            }
+
+        }
+        .table-khachdatban{
+            .no-kh{
+              font-size:18px;
+              text-align: center;
+              
+            }
+            table {
+              font-family: Arial, Helvetica, sans-serif;
+              border-collapse: collapse;
+              width: 100%;
+              margin-top: 15px;
+          
+            }
+            
+            table td, 
+            table th {
+              border: 1px solid #ddd;
+              padding: 8px;
+            }
+            
+            table tr:nth-child(even){background-color: #f2f2f2;}
+            
+            table tr:hover {background-color: #ddd;}
+            
+            table th {
+              padding-top: 12px;
+              padding-bottom: 12px;
+              text-align: left;
+              background-color: #0071ba;
+              color: white;
+            }
+          }
+          button {
+            border: none;
+            outline: none;
+            cursor: pointer;
+          }
+          .btn-confirm{
+            margin-right: 10px;
+            height: 30px;
+            background: #1fcf13;
+            border-radius: 5px;
+          }
+          .btn-huydat{
+            margin-right: 10px;
+            height: 30px;
+            background:#0071ba;
+            border-radius: 5px;
+          }
+    }
+}

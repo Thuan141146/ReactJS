@@ -1,0 +1,301 @@
+.back-sk{
+  height: 100%;
+    background: url(../../../assets/event/home_cloudfee_bg_d0aafa7f96c746329eaa1451a8441448.png);
+    .sukien-detail-container{
+         height: auto;
+        // border: 1px solid red;
+        // width: 100%;
+         margin: 0 80px;
+        padding-top: 35px;
+        height: 100%;
+        // background: url(../../../assets/event/home_cloudfee_bg_d0aafa7f96c746329eaa1451a8441448.png);
+      
+    
+        background-size: 100% 200%;
+        .intro-sukien{
+            display: flex;
+            height: 530px;
+            // border: 8px solid rgb(55, 0, 255);
+            padding-left: 30px;
+            .content-left{
+                width: 30%;
+                height: 500px;
+                background: center center no-repeat;
+                background-size: 120% 101%;
+                border-radius: 15px;
+                //border: 8px solid rgb(55, 0, 255);
+    
+            }
+            .content-right{
+                //border: 1px solid;
+                width: 100%;
+                height: 500px;
+                display: flex;
+                flex-direction: column;
+                padding-left: 50px;
+                padding-bottom: 10px;
+                
+                .up{  
+                    // border: 1px solid;
+                    font-weight: 600;
+                    font-size: 40px;
+                    color: #febf3e;
+                    text-shadow: 1px 1px 1px #333;
+                    font-family: 'haha';
+                    line-height: 1.1;
+                    padding-bottom: 10px;
+                    text-align: center;
+                //text-align: center;
+                }
+                .up1{  
+                    text-align: center;
+                    // border: 1px solid;
+                    font-size: 25px;
+                    color:#333; 
+                    font-family: 'haha';
+                    padding-bottom: 10px;
+                  
+                }
+                .up2{  
+                    text-align: center;
+                    // border: 1px solid;
+                    font-size: 25px;
+                    color:#333; 
+                    font-family: 'haha';
+                }
+                .up3{  
+                    text-align: center;
+                    // border: 1px solid;
+                    font-size: 25px;
+                    color:#333; 
+                    font-family: 'haha';
+                    .currency{
+                        margin: 0 5px;
+                    }
+                }
+                .down{
+                    // border: 1px solid;
+                    font-size: 20px;
+                    color:  #333;
+                    font-family: 'haha';
+                    line-height: 1.1;
+                    padding-top: 10px;
+                    span{
+                       
+                        font-size: 20px;
+                        color:  #333;
+                        font-family: 'haha';
+                        line-height: 1.1;
+                        padding-top: 10px;  
+                    }
+                   
+                }
+                .chu-thich{
+                    margin-top: 20px;
+                    border: 4px solid #febf3e;
+                    display: flex;
+                    gap: 15px;
+                    flex-wrap: wrap;
+                    border-radius: 15px;
+                    .body-chu-thich{
+                 
+                        button{
+                            margin-left: 10px;
+                            border: none;
+                            background:orange;
+                            text-align: center;
+                            color:  #333;
+                            font-family: 'haha';
+                            font-size: 18px;
+                            width: 168px;
+
+                        }
+                        .ten{
+                            text-align: center;
+                            color:#333;
+                            font-family: 'haha';
+                            font-size: 20px;
+
+                        }
+                    }
+                }
+                .ghe-trong {
+                    .all-available-ban{
+
+                        .text-caledar{
+                            color:#333;
+                            margin-top: 10px;
+                            text-align: center;
+                          
+                            i{  
+                                border-top:3px solid #febf3e ;
+                                margin-right:  5px;
+                                font-size: 30px;
+                                color: #febf3e;
+                                cursor: pointer;
+                                padding-top: 10px;
+                                padding-bottom: 20px;
+                            }
+                            span{
+                             
+                                margin-left: 10px;
+                                color:#333;
+                                font-family: 'haha';
+                                font-size: 20px;
+                             
+                            }
+                
+                        }
+                        .ban-content{
+                            //border: 1px solid red;
+                            width: 100%;
+                            display: flex;
+                            gap: 15px;
+                            flex-wrap: wrap;
+                            margin-left: 100px;
+                            margin-right: 100px;
+                         
+                         
+                            button{ 
+                                border: none;
+                                background:orange;
+                                text-align: center;
+                                color:  #333;
+                                font-family: 'haha';
+                                font-size: 18px;
+                                width: 188px;
+                                cursor: pointer;
+                                &.active{
+                                    background: deepskyblue;
+                                }
+                                i{
+                                    text-shadow: 1px 1px 1px #333;
+                                    line-height: 1.1;
+                                    font-size: 30px;
+                                    color: #febf3e;
+                                    cursor: pointer;
+                                }
+                            }
+                            .het-ban{
+                                color:#333;
+                                font-family: 'haha';
+                                font-size: 20px;
+                                font-style: italic;
+                                margin-left: 110px;
+                                margin-top: 20px;
+                            }
+                
+                        }
+                    }
+                }
+              
+            }
+    
+        }
+        .lich-sukien{
+           // border: 1px solid rebeccapurple;
+            width: 26%;
+            height: 250px;
+            background: url(../../../assets/sodo.png);
+            // background: center center no-repeat;
+            background-size: 100% 100%;
+            border-radius: 50px;
+            margin-bottom: 10px;
+    
+        }
+        .tong-tt{
+            margin-top: 150px;
+            width: 80%;
+            height: 280px;
+            border: 5px solid #febf3e;
+            display: flex;
+            margin-left: 150px;
+            border-radius: 25px;
+               
+               
+                flex-direction: column;
+            .row{
+                flex-wrap: wrap;
+                align-items: center;
+                gap: 55px;
+                .pttt{
+                    label{
+                        color:#333;
+                        font-family: 'haha';
+                        font-size: 20px;
+                    }
+                    margin-left: 100px;
+                    width: 30%;
+                   // border: 1px solid ;
+                    flex-direction: column;
+                    .don-kh{
+                        margin-top: 20px;
+                        padding-top: 5px;
+                        width: 100%;
+                        text-align: center;
+                        height: 40px;
+                        background-color: #febf3e;
+                        //border: 1px solid gray;
+                        color:#333;
+                        font-family: 'haha';
+                        font-size: 20px;
+                        margin-bottom: 20px;
+                        border-radius: 10px;
+                        &:hover{
+                            background-color: aqua;
+                        }
+
+                    }
+
+                }
+                .tongtien{
+                    color:#333;
+                    font-family: 'haha';
+                    font-size: 20px;
+                    gap: 10px;
+                    width: 40%;
+                   // border: 1px solid ;
+                    padding-top: 10px;
+                    margin-left: 70px;
+
+                }
+                button{
+                    margin-left: 430px;
+                    margin-right: 550px;
+                    background-color: #febf3e;
+                    color:#333;
+                    font-family: 'haha';
+                    font-size: 20px;
+                    height: 40px;
+                    border-radius: 10px;
+                    &:hover{
+                        background-color: aqua;
+
+                    }
+                }
+            }
+
+        }
+        .detail-info-sukien{
+           margin-top: 0px;
+            padding-left: 30px;
+            font-size: 20px;
+            color:  #333;
+            font-family: 'haha';
+            line-height: 1.1;
+            padding-top: 10px;
+            h3{
+                 font-size: 17px;
+            }
+       img{
+        width: 100%;
+    
+        border-radius: 30px;
+       }
+    
+        }
+        .danhgia-sukien{
+    
+        }
+    }
+}

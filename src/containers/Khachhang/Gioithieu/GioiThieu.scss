@@ -1,0 +1,158 @@
+.back-gioithieu{
+    background: url(../../../assets/event/home_cloudfee_bg_d0aafa7f96c746329eaa1451a8441448.png);
+    .gioithieu-container{
+        height:auto;
+        //  border: 1px solid red;
+         width:auto;
+         margin: 0 100px;
+        padding-top: 35px;
+        background-size: 100% 200%;
+        .intro-gioithieu{
+          
+            display: flex;
+            height: auto;
+            width: 100%;
+            // border: 8px solid rgb(55, 0, 255);
+            align-items: center;
+            // padding-left: 30px;
+            .content-left{
+                padding-top: 10px;
+                background: url('../../../assets/2.svg') center center no-repeat;
+                height:500px;
+                width: 40%;
+                cursor: pointer;
+                background-size: 100% 100%;
+                // border: 8px solid black;
+                border-radius: 15px;
+                align-items: center;
+    
+            }
+            .content-right{
+                // border: 1px solid rgb(0, 0, 255);
+                width: 65%;
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                padding-left: 30px;
+                .up{
+                    // border: 9px solid rgb(255, 0, 128);
+                    font-weight: 600;
+                    font-size: 40px;
+                    color: #febf3e;
+                    text-shadow: 1px 1px 1px #333;
+                    font-family: 'haha';
+                    line-height: 1.1;
+                    text-align: center;
+                    p{
+                        font-weight: 600;
+                        font-size: 30px;
+                        color: #febf3e;
+                        text-shadow: 1px 1px 1px #333;
+                        font-family: 'haha';
+                        line-height: 1.1;
+                        text-align: center;
+                    }
+                
+                }
+                .down{
+                    // border: 5px solid rgb(255, 0, 128);
+                    font-size: 20px;
+                    color:  #333;
+                    font-family: 'haha';
+                    line-height: 1.1;
+                    padding-top: 10px;
+                    p {
+                       
+                        padding-left: 20px;
+                        padding-top: 10px;
+                        color:  #333;
+                        font-family: 'haha';
+                        line-height: 1.1;
+                        font-size: 20px;
+                    }
+                    li {
+                        padding-left: 25px;
+                        color:  #333;
+                        font-family: 'haha';
+                        line-height: 1.1;
+                        font-size: 20px;
+
+                    }
+                    lo{
+                        padding-left: 25px;
+                        color:  #333;
+                        font-family: 'haha';
+                        line-height: 1.1;
+                        font-size: 20px;
+                    }
+                    
+                }
+            }
+    
+        }
+        .lich-gioithieu{
+            padding-top: 20px;
+            height: auto;
+            // border: 5px solid rgb(255, 0, 128);
+          
+
+            li {
+                padding-left: 25px;
+                color:  #333;
+                font-family: 'haha';
+                line-height: 1.1;
+                font-size: 20px;
+
+            }
+            lo{
+                padding-left: 25px;
+                color:  #333;
+                font-family: 'haha';
+                line-height: 1.1;
+                font-size: 20px;
+            }
+            
+        
+        }
+        .detail-info-gioithieu{
+            padding-top: 20px;
+            align-items: center;
+            .img1{ background: url('../../../assets/about/anh1.jpg') center center no-repeat;
+                padding-top: 30px;
+                padding-left: 30px;
+                
+                background-size: 100% 100%;
+                // border: 9px solid yellow;
+                border-radius: 30px;
+                height: 1000px;
+                width: 100%;
+               }
+            .img2{
+                background: url('../../../assets/about/anh2.jpg') center center no-repeat;
+                padding-top: 30px;
+                padding-left: 30px;
+                background-size: 100% 100%;
+                // border: 9px solid yellow;
+                border-radius: 30px;
+                height: 1000px;
+                width: 100%;
+            }
+            .img3{
+                background: url('../../../assets/about/anh3.jpg') center center no-repeat;
+                padding-top: 30px;
+                padding-left: 30px;
+                background-size: 100% 100%;
+                // border: 9px solid yellow;
+                border-radius: 30px;
+                height: 1000px;
+                width: 100%;
+            }
+
+            
+    
+        }
+        .danhgia-gioithieu{
+       
+        }
+    }
+}

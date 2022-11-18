@@ -1,0 +1,26 @@
+
+#TableBan {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 15px;
+
+  }
+  
+  #TableBan td, 
+  #TableBan th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #TableBan tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #TableBan tr:hover {background-color: #ddd;}
+  
+  #TableBan th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #0071ba;
+    color: white;
+  }

@@ -1,0 +1,56 @@
+.qlsk-container {
+    padding: 20px;
+    .qlsk-title{
+        text-align: center;
+        margin: 15px 0;
+        font-size: 20px;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+    .qlsk-editor{
+
+    }
+    .save-qlsk{
+        margin-top: 20px;
+        margin-bottom: 30px;
+        border-radius: 3px;
+        outline: none;
+        border: none;
+        padding: 5px;
+        background:  #0d6efd;
+        color: white;
+        font-weight: 700;
+        cursor: pointer;
+        &:hover{
+            opacity: 0.6;
+        }
+    }
+    .create-qlsk{
+        margin-top: 20px;
+        margin-bottom: 30px;
+        border-radius: 3px;
+        outline: none;
+        border: none;
+        padding: 5px;
+        background:  #1be109c5;
+        color: white;
+        font-weight: 700;
+        cursor: pointer;
+        &:hover{
+            opacity: 0.6;
+        }
+    }
+    .more-info{
+        display: flex;
+        gap: 15px;
+        padding-bottom: 20px;
+
+        .content-left{
+            width: 40%;
+        }
+        .content-right{
+            width: 60%;
+        }
+    }
+
+}
