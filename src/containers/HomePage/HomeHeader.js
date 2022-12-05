@@ -52,17 +52,38 @@ class HomeHeader extends Component {
         }
     }
     togiohang = () => {
-        let iduser = this.props.userInfo.id
-        if (this.props.history) {
-            this.props.history.push({
-                pathname: "/giohang/",
-                state: { iduser }
-            })
+        let { userInfo } = this.props
+        let iduser = userInfo
+            && userInfo.id ? userInfo.id : ''
+        if (iduser === '') {
+            toast.info("Vui đăng nhập")
         }
+        else {
+            if (this.props.history) {
+                this.props.history.push({
+                    pathname: "/giohang/",
+                    state: { iduser }
+                })
+            }
+        }
+
     }
     login = () => {
         if (this.props.history) {
             this.props.history.push(`/logincustomer`)
+        }
+    }
+    update = () => {
+        let iduser = this.props.userInfo.id;
+        let diachi = this.props.userInfo.diachi;
+        let email = this.props.userInfo.email;
+        let ten_tk = this.props.userInfo.ten_tk;
+        let sdt = this.props.userInfo.sdt;
+        if (this.props.history) {
+            this.props.history.push({
+                pathname: "/update",
+                state: { iduser, diachi, email, ten_tk, sdt }
+            })
         }
     }
     dangky = () => {
@@ -74,7 +95,7 @@ class HomeHeader extends Component {
     }
     render() {
         const { processLogout, userInfo } = this.props;
-        // console.log('check userinfo', userInfo)
+        console.log('check userinfo', userInfo)
         // let imageBase64 = '';
         // if (userInfo.anh) {
         //     imageBase64 = new Buffer(userInfo.anh, 'base64').toString('binary');
@@ -99,12 +120,21 @@ class HomeHeader extends Component {
                                 <div className="subs-title1"><b>Giới thiệu</b></div>
                                 <div className="subs-title"> Thông tin về của hàng</div>
                             </div>
-                            <div className="child-content">
+                            {/* <div className="child-content">
                                 <div className="search">
                                     <i className="fas fa-search"></i>
                                     <input type="text" placeholder=" Tìm kiếm " />
                                 </div>
+                            </div> */}
+                            <div className="child-content">
+                                <div className="options-child"
+                                    onClick={() => this.dangky()}
+                                >
+                                    <div className="subs-title1"><b>Đăng ký</b></div>
+                                    <div className="subs-title">Tạo tài khoản mới</div></div>
+
                             </div>
+
 
                         </div>
                         <div className="right-content">
@@ -115,8 +145,12 @@ class HomeHeader extends Component {
                             </div>
                             <div className="info-kh">
                                 {userInfo && userInfo.ten_tk
-                                    ? userInfo.ten_tk :
-                                    <i className="fas fa-user" onClick={() => this.login()}></i>}
+                                    ? <div onClick={() => this.update()}>{userInfo.ten_tk}
+                                        <div>Chỉnh sửa thông tin </div>
+                                    </div> :
+                                    <i className="fas fa-user" onClick={() => this.login()}>
+                                        <div className="login">Đăng nhập</div>
+                                    </i>}
                             </div>
                             <div className="btn btn-logout" onClick={processLogout} title="log out">
                                 <i className="fas fa-sign-out-alt"></i>
@@ -170,12 +204,7 @@ class HomeHeader extends Component {
                                     >Sự kiện</div>
 
                                 </div>
-                                <div className="options-child">
-                                    <div className="icon-child"><i class="fas fa-users"></i></div>
-                                    <div className="text-child"
-                                        onClick={() => this.dangky()}
-                                    >Đăng ký tài khoản</div>
-                                </div>
+
                             </div>
                         </div>
                     </div>

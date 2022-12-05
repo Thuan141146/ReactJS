@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import *  as actions from "../../../store/actions";
 import './Danhthu.scss';
 import DatePicker from '../../../components/Input/DatePicker';
-import { getdanhthuByDate, getchiByDate, getdanhthuvnpay } from '../../../services/khubanService';
+import { getdanhthuByDate, getchiByDate, getdanhthuvnpay, getdanhthuveByDate } from '../../../services/khubanService';
 import moment from 'moment';
 import NumberFormat from 'react-number-format';
 import { toast } from 'react-toastify';
@@ -18,6 +18,7 @@ class Danhthu extends Component {
             datadanhthu: [],
             datachi: [],
             datadanhthuvnpay: [],
+            datadanhthuve: [],
             // isOpenModalXacNhan: false,
             // dataModal: {},
 
@@ -31,8 +32,8 @@ class Danhthu extends Component {
     danhthungay = async () => {
         let { currentDate } = this.state;
         let formateDate = moment(new Date(currentDate)).format('DD/MM/YYYY');
-        let NGAY = new Date(formateDate).getTime();
-        // console.log('b1809299 check item:', NGAY)
+        // let NGAY = new Date(currentDate).getTime();
+        // console.log('b1809299 check item 19:', NGAY)
         let res = await getdanhthuByDate({
             // khuvucid: khu,
             NGAY: formateDate
@@ -45,11 +46,16 @@ class Danhthu extends Component {
             // khuvucid: khu,
             NGAY: formateDate
         })
+        let res3 = await getdanhthuveByDate({
+            // khuvucid: khu,
+            NGAY: formateDate
+        })
         if (res && res.errCode === 0) {
             this.setState({
                 datadanhthu: res.data,
                 datachi: res1.data,
                 datadanhthuvnpay: res2.data,
+                datadanhthuve: res3.data,
             })
         }
 
@@ -66,7 +72,7 @@ class Danhthu extends Component {
             // let { selectedKhu } = this.props;
             await this.danhthungay()
         })
-        // console.log('b1809299 check item:', this.state)
+        //console.log('b1809299 check item:', this.state)
 
 
     }
@@ -106,6 +112,10 @@ class Danhthu extends Component {
         let giamgia = Number()
         let datadanhthu = this.state.datadanhthu;
         console.log('b1809299 check state 1: ', datadanhthu)
+        ////danh thu ve
+        let datadanhthuve = this.state.datadanhthuve;
+        console.log('b1809299 check state ve: ', datadanhthuve)
+        let tongtienve = datadanhthuve.reduce((tongtienve, item) => tongtienve += Number(item.T_TIEN), 0);
         ///danhthu
         let tongtien = datadanhthu.reduce((tongtien, item) => tongtien += Number(item.T_TIEN), 0);
         console.log('check tong tien: ', tongtien)
@@ -126,7 +136,7 @@ class Danhthu extends Component {
         ///thucthu
         ///tong bán
         let tongban = tongtien + tiengiam
-        let thucthu = tongtien - tongchi - giamgia
+        let thucthu = tongtien - tongchi - giamgia + tongtienve
         console.log('check tong tien: ', thucthu)
         return (
             <>
@@ -177,9 +187,18 @@ class Danhthu extends Component {
                                 <div className="title">
                                     Danh thu gold coffee
                                 </div>
-                                <div className="tong-chi">Tổng tiền bán: <NumberFormat
+                                <div className="tong-chi">Tổng tiền món: <NumberFormat
                                     className="tongtien"
                                     value={tongban}
+                                    displayType={'text'}
+                                    thousandSeparator={true}
+                                    suffix={'đ'}
+                                />
+
+                                </div>
+                                <div className="tong-chi">Tổng tiền bán vé : <NumberFormat
+                                    className="tongtien"
+                                    value={tongtienve}
                                     displayType={'text'}
                                     thousandSeparator={true}
                                     suffix={'đ'}

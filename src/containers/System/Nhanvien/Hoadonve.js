@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import './Hoadon.scss';
-import { getalldonbyiddon, editTTDonSevice, savebulkhoadon } from '../../../services/khubanService';
+import './Hoadonve.scss';
+import { getdetailvebyiddon, editTTDonSevice, savebulkhoadon } from '../../../services/khubanService';
 import HomeHeader from '../../HomePage/HomeHeader';
 import NumberFormat from 'react-number-format';
 import moment from 'moment';
@@ -9,7 +9,7 @@ import { withRouter } from 'react-router';
 import *  as actions from "../../../store/actions";
 import ReactToPrint, { useReactToPrint } from 'react-to-print';
 import { toast } from 'react-toastify';
-class Hoadon extends Component {
+class Hoadonve extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -24,7 +24,7 @@ class Hoadon extends Component {
         this.props.fetchAllStatusStart();
         let ID_DON = this.props.location.state.ID_DON
         console.log('check gio hang:', ID_DON)
-        let res = await getalldonbyiddon(ID_DON)
+        let res = await getdetailvebyiddon(ID_DON)
         console.log('check gio hang:', ID_DON)
         if (res && res.errCode === 0) {
             this.setState({
@@ -189,12 +189,7 @@ class Hoadon extends Component {
         console.log('check props:', listdata)
         const { userInfo } = this.props
         let chonmon = listdata.filter(item => item.isSelected === true)
-        //console.log('chon mon render:', listdata)
-        let tongtien = listdata.reduce((tongtien, item) => tongtien + Number(item.GIA_SPHAM) * Number(item.SL_SPHAM), 0);
-        let tiengiam1 = listdata.reduce((tiengiam1, item) => tiengiam1 + Number(item.GIA_SPHAM) * Number(item.SL_SPHAM) * Number(item.ID_KM) / 100, 0);
-        let ship = Number(15000);
-        let today = tongtien + ship - tiengiam1;
-        console.log('tong:', today)
+
         let pttt = this.props.location.state.pttt;
         let TEN_KH = this.props.location.state.ID_KH
         let SDT = this.props.location.state.SDT
@@ -204,7 +199,7 @@ class Hoadon extends Component {
         let NGAY = this.props.location.state.NGAY_LAP
         // console.log('check thanh toan:', DIA_CHI)
         let { ID_TT } = this.state
-
+        let tongtien = listdata.reduce((tongtien, item) => tongtien + Number(item.GIA_GHE) + Number(item.GIA_VE), 0);
 
         return (
             <>
@@ -222,7 +217,7 @@ class Hoadon extends Component {
 
 
                 />
-                <div className="back-Hoadon" ref={el => (this.componentRef = el)}>
+                <div className="back-Hoadonve" ref={el => (this.componentRef = el)}>
                     <div className="title">
                         GOLD COFFEE
                     </div>
@@ -245,16 +240,13 @@ class Hoadon extends Component {
                         <div className="sdt-kh">Số điện thoại: {SDT
                             && SDT ? SDT : ''}
                         </div>
-                        <div className="dc-kh">Địa chỉ: {DIA_CHI
-                            && DIA_CHI ? DIA_CHI : ''}
-                        </div>
 
                     </div>
                     <div className="giohang-container">
                         <div className="header">
-                            <div className="header2">Món </div>
-                            <div className="header3">Size</div>
-                            <div className="header4">Số lượng</div>
+                            <div className="header2">Tên sự kiện </div>
+                            <div className="header3">Ghế</div>
+                            <div className="header4">loại ghế</div>
                             <div className="header5">Thành tiền</div>
                             <div className="header6"></div>
 
@@ -263,14 +255,11 @@ class Hoadon extends Component {
                             <div className="content-left">
                                 {listdata && listdata.length > 0
                                     && listdata.map((item, index) => {
-                                        let imageBase64 = '';
-                                        if (item.mon.ANH) {
-                                            imageBase64 = new Buffer(item.mon.ANH, 'base64').toString('binary');
-                                        }
+
                                         let SL = item.SL_SPHAM
-                                        let tongtienmon = Number(item.GIA_SPHAM) * Number(item.SL_SPHAM);
-                                        let tongtiegiam = Number(item.ID_KM) / 100 * Number(item.GIA_SPHAM) * Number(item.SL_SPHAM);
-                                        let thanhtien = tongtienmon - tongtiegiam
+                                        let tongtiensk = Number(item.GIA_GHE) + Number(item.GIA_VE);
+                                        //let tongtiegiam = Number(item.ID_KM) / 100 * Number(item.GIA_SPHAM) * Number(item.SL_SPHAM);
+                                        //let thanhtien = tongtienmon - tongtiegiam
                                         return (
 
 
@@ -278,25 +267,25 @@ class Hoadon extends Component {
 
                                                 <div className="mon-right1"
                                                     key={index}
-                                                >{item.mon.TEN_MON}
+                                                >{item.sk.TEN_LSK}
                                                     <div>
                                                         <NumberFormat
                                                             className="gia"
-                                                            value={item.GIA_SPHAM}
+                                                            value={tongtiensk}
                                                             displayType={'text'}
                                                             thousandSeparator={true}
                                                             suffix={'đ'}
                                                         />
                                                     </div>
-                                                    <div >Giảm: {item && item.ID_KM ? item.ID_KM : '0'}% </div>
+                                                    {/* <div >Giảm: {item && item.ID_KM ? item.ID_KM : '0'}% </div> */}
                                                 </div>
 
-                                                <div className="mon-right2">{item.tsize.TEN_SIZE}</div>
-                                                <div className="mon-right3">{SL}</div>
+                                                <div className="mon-right2">{item.ttghe.SO_GHE}</div>
+                                                <div className="mon-right3">{item.ttghe.TT}</div>
                                                 <div className="mon-right4">
                                                     <NumberFormat
                                                         className="gia"
-                                                        value={thanhtien}
+                                                        value={tongtiensk}
                                                         displayType={'text'}
                                                         thousandSeparator={true}
                                                         suffix={'đ'}
@@ -319,19 +308,19 @@ class Hoadon extends Component {
                                 suffix={'đ'}
                             />
                             </div>
-                            <div className="phi-ship">Tổng tiền hàng: <NumberFormat
+                            {/* <div className="phi-ship">Tổng tiền hàng: <NumberFormat
                                 className="gia"
                                 value={tiengiam1}
                                 displayType={'text'}
                                 thousandSeparator={true}
                                 suffix={'đ'}
                             />
-                            </div>
-                            <div className="phi-ship">Phí Ship: 15.000đ</div>
+                            </div> */}
+                            {/* <div className="phi-ship">Phí Ship: 15.000đ</div> */}
 
                             <div className="Tongtien">Tổng thanh toán: <NumberFormat
                                 className="gia"
-                                value={today}
+                                value={tongtien}
                                 displayType={'text'}
                                 thousandSeparator={true}
                                 suffix={'đ'}
@@ -369,4 +358,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Hoadon));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Hoadonve));

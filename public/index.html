@@ -21,11 +21,60 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
   <title>Thuan</title>
+
 </head>
 
 <body>
+  <style>
+    .rw-conversation-container .rw-header {
+      background-color: #008039;
+    }
+
+    .rw-conversation-container .rw-messages-container .rw-message .rw-response {
+      background-color: #008037;
+      color: white;
+    }
+
+    .rw-conversation-container .rw-messages-container .rw-message .rw-client {
+      background-color: #D9D9D9;
+      color: black;
+    }
+
+    .rw-launcher {
+      background-color: #008037;
+      font-size: 40px;
+      height: 80px;
+      width: 80px;
+    }
+  </style>
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root"></div>
+  <script>!(function () {
+      let e = document.createElement("script"),
+        t = document.head || document.getElementsByTagName("head")[0];
+      (e.src =
+        "https://cdn.jsdelivr.net/npm/rasa-webchat@1.0.1/lib/index.js"),
+        // Replace 1.x.x with the version that you want
+        (e.async = !0),
+        (e.onload = () => {
+          window.WebChat.default(
+            {
+              initPayload: '/greet',
+              customData: { language: "en" },
+              socketUrl: "http://localhost:5005",
+              title: 'GOLD COFFEE',
+              subtitle: 'Hỗ trợ khách hàng trực tuyến'
+              // add other props here
+            },
+            null
+          );
+        }),
+
+        t.insertBefore(e, t.firstChild);
+      // localStorage.clear();
+    })();
+
+  </script>
   <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.

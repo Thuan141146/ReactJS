@@ -130,9 +130,9 @@ class TableChi extends Component {
                                     {/* <td>{item.MO_TA}</td> */}
                                     <td >
                                         <div className='edit-btn'>
-                                            <button
+                                            {/* <button
                                                 onClick={() => this.handleEditMon(item)}
-                                                className="btn-edit" ><i className="fas fa-pencil-alt"></i></button>
+                                                className="btn-edit" ><i className="fas fa-pencil-alt"></i></button> */}
                                             <button
                                                 onClick={() => this.handleDeletePhieuChi(item)}
                                                 className="btn-delete" ><i className="fas fa-trash-alt"></i></button>

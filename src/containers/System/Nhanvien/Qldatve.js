@@ -3,10 +3,11 @@ import { connect } from "react-redux";
 import *  as actions from "../../../store/actions";
 import './Qldatve.scss';
 import DatePicker from '../../../components/Input/DatePicker';
-import { getQLveByDate, editTTDonSevice, xacnhanhuyve } from '../../../services/khubanService';
+import { getQLveByDate, editTTDonSevice, guithuhuyve } from '../../../services/khubanService';
 import moment from 'moment';
 import { toast } from 'react-toastify';
 import LoadingOverlay from 'react-loading-overlay';
+import ModalXacHuyVe from './ModalXacHuyVe';
 class Qldatve extends Component {
     constructor(props) {
         super(props);
@@ -14,8 +15,10 @@ class Qldatve extends Component {
             currentDate: moment(new Date()).startOf('day').valueOf(),
             getdon: [],
             statusArr: [],
-            // isOpenModalXacNhan: false,
-            // dataModal: {},
+            ///huyve
+            isOpenModalHuyVe: false,
+            dataModalHuyVe: {},
+            isShowLoadingHuyVe: false,
 
         }
     }
@@ -48,7 +51,6 @@ class Qldatve extends Component {
             this.setState({
                 statusArr: arrStatus,
                 ID_TT: arrStatus && arrStatus.length > 0 ? arrStatus[0].idkey : ''
-
             })
         }
     }
@@ -88,44 +90,50 @@ class Qldatve extends Component {
 
     // }
 
-    // closemodalxacnhan = () => {
-    //     this.setState({
-    //         isOpenModalXacNhan: false,
-    //         dataModal: {}
+    closemodalhuyve = () => {
+        this.setState({
+            isOpenModalHuyVe: false,
+            dataModalHuyVe: {}
 
-    //     })
-    // }
-    // guithuxacnhan = async (dataChilFromModal) => {
-    //     let { dataModal } = this.state;
-    //     this.setState({
-    //         isShowLoading: true
-    //     })
+        })
+    }
+    guithuhuyve = async (dataChilFromModal) => {
+        let { dataModalHuyVe } = this.state;
+        this.setState({
+            isShowLoadingHuyVe: true
+        })
 
-    //     let res = await guithuxacnhan({
-    //         email: dataChilFromModal.email,
-    //         imgBase64: dataChilFromModal.imgBase64,
-    //         khuvucid: dataModal.khuvucid,
-    //         ID_TK: dataModal.ID_TK,
-    //         ID_BAN: dataModal.ID_BAN,
-    //         ten_tk: dataModal.ten_tk,
+        let res = await guithuhuyve({
+            email: dataChilFromModal.email,
+            NGAYDAT: dataModalHuyVe.NGAY,
+            NGAYDIEN: dataModalHuyVe.NGAYDIEN,
+            SUAT: dataModalHuyVe.SUAT,
+            TEN_SK: dataModalHuyVe.TEN_SK,
+            T_TIEN: dataModalHuyVe.T_TIEN,
+            ID_DON: dataModalHuyVe.ID,
+            ten_tk: dataModalHuyVe.ten_tk,
+            sdt: dataModalHuyVe.sdt,
+            TT: dataModalHuyVe.TT,
+            tenpttt: dataModalHuyVe.tenpttt,
 
-    //     });
-    //     if (res && res.errCode === 0) {
-    //         this.setState({
-    //             isShowLoading: false
-    //         })
 
-    //         toast.success('Gửi thư xác nhận thành công');
-    //         this.closemodalxacnhan();
-    //         await this.getDataDatLich();
-    //     }
-    //     else {
-    //         this.setState({
-    //             isShowLoading: false
-    //         })
-    //         toast.error('Gửi thư xác nhận không thành công')
-    //     }
-    // }
+        });
+        if (res && res.errCode === 0) {
+            this.setState({
+                isShowLoadingHuyVe: false
+            })
+
+            toast.success('Xác nhận hủy vé thành công');
+            this.closemodalhuyve();
+            await this.getDatadon();
+        }
+        else {
+            this.setState({
+                isShowLoadingHuyVe: false
+            })
+            toast.error('Xác nhận hủy vé không thành công')
+        }
+    }
     onChangeInput = (event, id) => {
         let copyState = { ...this.state }
         // console.log('check tt:', this.state)
@@ -154,31 +162,41 @@ class Qldatve extends Component {
             state: { ID_DON, TEN_TT, TEN_KH, SDT }
         })
     }
-    handlexacnhanHuyve = async (ve) => {
-        let ID = ve.id;
-        let ID_TT = ve.ID_TT;
-        console.log('check propsid:', ID)
-        let res = await xacnhanhuyve(ID, ID_TT);
-        if (res && res.errCode === 0) {
+    handlexacnhanHuyve = (item) => {
 
-            toast.success('Xác nhận hủy vé thành công');
+        let data = {
+            ten_tk: item.ten.ten_tk,
+            sdt: item.ten.sdt,
+            email: item.ten.email,
+            tenpttt: item.tenpttt.TEN_TT,
+            NGAY: item.NGAY,
+            TT: item.ID_TT,
+            T_TIEN: item.T_TIEN,
+            TEN_SK: item.donve.TEN_LSK,
+            NGAYDIEN: item.donve.NGAY,
+            SUAT: item.donve.GIO,
+            ID: item.id
+        }
+        this.setState({
+            isOpenModalHuyVe: true,
+            dataModalHuyVe: data
 
-            await this.getDatadon()
-        }
-        else {
-            toast.error('Xác nhận hủy vé không thành công')
-        }
+        })
+        // console.log('b1809299 check item:', data)
+
     }
+
     render() {
         let status = this.state.statusArr;
         // console.log('b1809299 check state: ', status)
-        let { datadon, isOpenModalXacNhan, dataModal, ID_TT } = this.state
+        let { datadon, ID_TT } = this.state
+        let { isOpenModalHuyVe, dataModalHuyVe } = this.state
         console.log('b1809299 check status: ', datadon)
 
         return (
             <>
                 <LoadingOverlay
-                    active={this.state.isShowLoading}
+                    active={this.state.isShowLoadingHuyVe}
                     spinner
                     text='Vui lòng đợi vài giây...'
                 >
@@ -239,7 +257,7 @@ class Qldatve extends Component {
                                             <th>Mã đơn</th>
                                             <th>Họ và tên</th>
                                             <th>Số điện thoại</th>
-
+                                            <th>Tên sự kiện</th>
                                             <th>Phương thức thanh toán</th>
                                             <th>Mã thanh toán</th>
                                             <th>Thời gian</th>
@@ -255,7 +273,7 @@ class Qldatve extends Component {
                                                         <td>DH00{item.id}</td>
                                                         <td>{item.ten.ten_tk}</td>
                                                         <td>{item.SDT}</td>
-
+                                                        <td>{item.donve.TEN_LSK}</td>
                                                         <td>{item.tenpttt.TEN_TT}</td>
                                                         <td>{item.MATT}</td>
                                                         <td>{item.NGAY}</td>
@@ -276,7 +294,7 @@ class Qldatve extends Component {
 
                                             <tr>
 
-                                                <td colSpan="8" style={{ textAlign: "center" }}>Không có đơn vé</td>
+                                                <td colSpan="9" style={{ textAlign: "center" }}>Không có đơn vé</td>
 
 
                                             </tr>
@@ -288,12 +306,12 @@ class Qldatve extends Component {
                             </div>
                         </div>
                     </div>
-                    {/* <ModalXacNhanDon
-                        isOpenModal={isOpenModalXacNhan}
-                        dataModal={dataModal}
-                        closemodalxacnhan={this.closemodalxacnhan}
-                    // guithuxacnhan={this.guithuxacnhan}
-                    /> */}
+                    <ModalXacHuyVe
+                        isOpenModalHuyVe={isOpenModalHuyVe}
+                        dataModalHuyVe={dataModalHuyVe}
+                        closemodalhuyve={this.closemodalhuyve}
+                        guithuhuyve={this.guithuhuyve}
+                    />
                 </LoadingOverlay>
             </>
         );

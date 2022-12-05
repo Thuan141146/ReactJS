@@ -38,11 +38,12 @@ class SanPham extends Component {
     }
     handleViewDetailMon = (mon) => {
         let danhmucid = mon.ID_DM;
-        let monid = mon.id
+        let monid = mon.id;
+        // let ID_TK = this.props.userInfo.id;
         console.log('b1809299 check view infor su kien: ', mon)
         this.props.history.push({
             pathname: "/detail-sanpham/${mon.id}",
-            state: { danhmucid, monid }
+            state: { danhmucid, monid, }
         })
     }
     handleallmondanhmuc = (danhmuc) => {
@@ -112,7 +113,8 @@ class SanPham extends Component {
 
 const mapStateToProps = state => {
     return {
-        allmonRedux: state.admin.allmon
+        allmonRedux: state.admin.allmon,
+        userInfo: state.user.userInfo,
 
     };
 };

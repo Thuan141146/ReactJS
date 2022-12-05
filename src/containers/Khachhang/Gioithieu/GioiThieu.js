@@ -25,7 +25,7 @@ class GioiThieu extends Component {
                                 <div className="down">
                                     Nhắc đến cà phê học tập mà không nhắc tới Gold Coffee, quả thực là một thiếu sót vô cùng lớn.
                                     Gold Coffee mang đến bạn một không gian mát mẻ yên tĩnh là một trong không gian thích hợp cho việc học tập, với những món nước mới lạ giá cả rất phù hợp với túi tiền của các bạn sinh viên.
-                                    Ngoài ra quán còn trang bị hệ thống wifi tốc độ siêu mạnh kèm theo ổ cấm điện được lắp tại mỗi bàn thận tiện cho các bạn khi có nhu cầu sử dụng.
+                                    Ngoài ra quán còn trang bị hệ thống wifi tốc độ siêu mạnh kèm theo ổ cấm điện được lắp tại mỗi bàn thuận tiện cho các bạn khi có nhu cầu sử dụng.
                                     WEGO | GOLD COFFEE
                                     <p>Hệ thống cửa hàng:</p>
 

@@ -53,9 +53,11 @@
 
    
 .section-speacil {
-    background: #453226;
+    // background: #456D26;
     
-   
+         background: url("../../assets/selection.png") ;
+        
+         background-size: 100% 100%;
         .section-body{
             .speacil-customize{
                 .bg-image{
@@ -72,7 +74,7 @@
                     padding: 10px;
                     line-height: 1.1;
                     text-shadow: 1px 1px 1px #333;
-                    color: #febf3e;
+                    color:aliceblue;
                     font-family: 'haha';
                     font-size: 23px;
                     text-transform: uppercase;
@@ -82,7 +84,7 @@
                     padding: 10px;
                     line-height: 1.1;
                     text-shadow: 1px 1px 1px #333;
-                    color: #febf3e;
+                    color:#febf3e;
                     font-family: 'haha';
                     font-size: 23px;
                     
@@ -105,7 +107,7 @@
                     padding: 10px;
                     line-height: 1.1;
                     text-shadow: 1px 1px 1px #333;
-                    color: #febf3e;
+                    color: white;
                     font-family: 'haha';
                     font-size: 23px;
                     text-transform: uppercase;
@@ -126,7 +128,7 @@
 
 }       
 .section-speacil{
-    height: 600px ;
+    height: 640px ;
     
     
    
@@ -146,7 +148,7 @@
             .title-section {
                 line-height: 1.1;
                 text-shadow: 1px 1px 1px #333;
-                color: #febf3e;
+                color:white;
                 font-family: 'haha';
                 font-size: 35px;
                 font-weight: 600;

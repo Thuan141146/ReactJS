@@ -82,6 +82,10 @@ const savebulkvesk = (data) => {
     // console.log('check from sevice:', data)
     return axios.post('/api/dat-ve-sk', data)
 }
+const guibaoxau = (data) => {
+    // console.log('check from sevice:', data)
+    return axios.post('/api/send-bao-xau', data)
+}
 export {
     getAllMon,
     getAllSize,
@@ -101,5 +105,6 @@ export {
     getdanhgia,
     getkmByIdMon,
     savebulkvesk,
+    guibaoxau,
 
 }

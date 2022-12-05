@@ -57,7 +57,7 @@ class ModalXacNhan extends Component {
         // toggle={}
 
         let { isOpenModal, closemodalxacnhan, dataModal, guithuxacnhan } = this.props;
-        console.log("check data", dataModal);
+        console.log("check data nhan", dataModal);
         return (
             <Modal
                 isOpen={isOpenModal}

@@ -4,6 +4,7 @@ export const path = {
     LOGIN: '/login',
     LOGIN_CUSTOMER: '/logincustomer',
     LOG_OUT_CUSTOMER: '/logoutcustomer',
+    UPDATE: '/update',
     LOG_OUT: '/logout',
     SYSTEM: '/system',
     DETAIL_SUKIEN: '/sukien/detail-sukien/:id',

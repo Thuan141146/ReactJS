@@ -124,30 +124,23 @@ class DetaildonNV extends Component {
         let result = [];
         let { listdata } = this.state;
         let idnv = this.props.userInfo.id;
-        let tennv = this.props.userInfo.ten_tk;
         let iddon = this.props.location.state.ID_DON;
         let PTTT = this.props.location.state.TEN_TT;
         let idkh = this.props.location.state.TEN_KH;
-        let diachi = this.props.location.state.DIA_CHI;
-        //let chonmon = listdata.filter(item => item.isSelected === true)
-        // console.log('chon mon render:', chonmon)
         let tongtien = listdata.reduce((tongtien, item) => tongtien + Number(item.GIA_GHE) + Number(item.GIA_VE), 0);
         let today1 = moment(new Date()).format('HH:MM-DD/MM/YYYY');
         let today2 = new Date(today1).getTime();
-        // console.log('check ngay:', idkh)
 
         if (listdata && listdata.length > 0) {
             listdata.map((listdata, index) => {
                 let object = {};
-                object.GHI_CHU = diachi;
                 object.PTTT = PTTT;
                 object.ID_DON = iddon;
                 object.NGAY = today1;
-                object.ID_MON = listdata.ID_MON;
-                object.ID_SIZE = listdata.ID_SIZE;
-                object.GIA_SPHAM = listdata.GIA_SPHAM;
-                object.SL_SPHAM = listdata.SL_SPHAM;
-                object.ID_KM = listdata.ID_KM;
+                object.ID_SK = listdata.ID_SK;
+                object.ID_GHE = listdata.ID_GHE;
+                object.GIA_GHE = listdata.GIA_GHE;
+                object.GIA_VE = listdata.GIA_VE;
                 object.T_TIEN = tongtien;
                 result.push(object)
             })
@@ -165,28 +158,26 @@ class DetaildonNV extends Component {
             ID_KH: idkh,
             ID_NV: idnv,
             NGAY_LAP: today1,
-            GHI_CHU: diachi,
             PTTT: PTTT,
-            // GIAM_GIA: tiengiam1,
             TONG_TIEN: tongtien,
 
         })
         if (res && res.errCode === 0) {
             toast.success('Lưu đơn vé thành công')
+            toast.success('Lưu hoá đơn thành công')
             let ID_DON = iddon;
             let ID_KH = idkh;
-            let DIA_CHI = diachi
             let ID_NV = this.props.userInfo.ten_tk;
             let SDT = this.props.location.state.SDT;
             let pttt = PTTT;
             let NGAY_LAP = today1;
             this.props.history.push({
-                pathname: "/nhanvien/hoadon/",
-                state: { ID_DON, ID_KH, ID_NV, pttt, DIA_CHI, SDT, NGAY_LAP }
+                pathname: "/nhanvien/hoadonve/",
+                state: { ID_DON, ID_KH, ID_NV, pttt, SDT, NGAY_LAP }
             })
 
         } else {
-            toast.error('Lưu đơn vé không thành công')
+            toast.error('Lưu hoá đơn không thành công')
         }
     }
 

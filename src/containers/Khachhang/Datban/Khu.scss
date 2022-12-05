@@ -1,9 +1,11 @@
 .back-khu{
-    background: url(../../../assets/event/home_cloudfee_bg_d0aafa7f96c746329eaa1451a8441448.png);
+    background: url(../../../assets/bia4.png) center center no-repeat;
     background-size: 100% 100%;
     // border: 6px solid rgb(0, 255, 47);
     height: 100%; 
     width: 100%;
+    background-size: cover;
+    background-position: center;
   
     .sanpham-container{
         // border: 6px solid rgb(255, 81, 0);
@@ -21,7 +23,7 @@
             width: 100%; 
             line-height: 1.1;
             text-shadow: 1px 1px 1px #333;
-            color: #febf3e;
+            color:white;
             font-family: 'haha';
             font-size: 50px;
             text-align: center;
@@ -43,7 +45,7 @@
                  
                      i{// border: 10px solid blue;
                         font-size: 150px;
-                        color: #febf3e;
+                        color: white;
                         cursor: pointer;
                         text-shadow: 1px 1px 1px #333;
                         margin-top: 60px;
@@ -65,7 +67,7 @@
                     height: 30px;
                     width: 300px;
                     text-align: center;
-                    color:  #333;
+                    color: white;
                     font-family: 'haha';
                     font-size: 22px;
                     cursor: pointer;
@@ -76,7 +78,7 @@
                     height: 30px;
                     width: 300px;
                     text-align: center;
-                    color:  #333;
+                    color:  white;
                     font-family: 'haha';
                     font-size: 20px;
                 }

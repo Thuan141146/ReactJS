@@ -101,116 +101,134 @@ class DetailSuKien extends Component {
         let ID_SK = detailsukien.id;
         let NGAY_DIEN = detailsukien.NGAY;
         let SUAT_DIEN = detailsukien.GIO;
-        let ten_tk = this.props.userInfo.ten_tk;
-        let iduser = this.props.userInfo.id;
-        let sdt = this.props.userInfo.sdt;
-
-        let chonmon = dsghe.filter(item => item.isSelected === true)
-        //let count = chonmon.setCount((count) => count + 1, 0)
-        let tongtien = chonmon.reduce((tongtien, item) => tongtien + Number(item.GIA) + Number(item.GIA_SK), 0);
-        console.log('tong tien:', this.state)
-        let formateDate = moment(new Date()).format('DD/MM/YYYY');
-        let today1 = moment(new Date()).format("YYYY/MM/DD");
-        let today2 = new Date(today1).getTime() / 10;
-        console.log('check ngay:', today2)
-
-        if (chonmon && chonmon.length > 0) {
-            chonmon.map((chonmon, index) => {
-                let object = {};
-                object.ID_TK = iduser;
-                object.TEN_TK = ten_tk;
-                object.SDT = sdt;
-                object.PTTT = PTTT;
-                object.NGAY = formateDate;
-                object.NGAY1 = today2;
-                object.ID_GHE = chonmon.ID_GHE;
-                object.GIA_GHE = chonmon.GIA;
-                object.GIA_VE = chonmon.GIA_SK;
-                object.NGAY_DIEN = NGAY_DIEN;
-                object.SUAT_DIEN = SUAT_DIEN;
-                object.ID_SK = ID_SK;
-                result.push(object)
-            })
-        } else {
-            toast.error("Vui lòng chọn ghế trước khi nhấn đặt vé")
-            return;
+        let { userInfo } = this.props
+        let ten_tk = userInfo
+            && userInfo.ten_tk ? userInfo.ten_tk : ''
+        if (ten_tk === '') {
+            toast.info("Vui đăng nhập trước khi đặt vé")
         }
-        console.log('check push:', result)
-        //////bulk create dat hang
-        if (PTTT === 1) {
-            let res = await savebulkvesk({
-                arrchonmon: result,
-                ID_TK: iduser,
-                NGAY: formateDate,
-                PTTT: PTTT,
-                T_TIEN: tongtien,
-                SDT: sdt,
-                NGAY1: today2,
-                // TIEN_GIAM: tiengiam1,
-            })
+        else {
+            // let ten_tk = this.props.userInfo.ten_tk;
+            let iduser = userInfo
+                && userInfo.id ? userInfo.id : ''
+            if (iduser === '') {
 
-            if (res && res.errCode === 0) {
-                toast.success('Đặt vé thành công')
-
-                //let ID_TK = this.props.location.state.iduser
-                // let res = await deleteproductcartbyidService(ID_TK)
-                if (res && res.errCode === 0) {
-                    // await this.getcartbyidfromuser();
-                }
-                else {
-                    alert(res.errMessage)
-                }
-
-            } else {
-                toast.error('Đặt vé không thành công')
             }
+            let sdt = userInfo
+                && userInfo.sdt ? userInfo.sdt : ''
+            if (sdt === '') {
 
-
-        } else {
+            }
             let chonmon = dsghe.filter(item => item.isSelected === true)
             //let count = chonmon.setCount((count) => count + 1, 0)
             let tongtien = chonmon.reduce((tongtien, item) => tongtien + Number(item.GIA) + Number(item.GIA_SK), 0);
             console.log('tong tien:', this.state)
-            let today = new Date().getTime();
-            let ten_tk = this.props.userInfo.ten_tk;
             let formateDate = moment(new Date()).format('DD/MM/YYYY');
             let today1 = moment(new Date()).format("YYYY/MM/DD");
-            let today2 = new Date(today1).getTime() / 10;
-            console.log('tien:', tongtien)
-            console.log('mã dơn:', today)
-            let res = await getPayment({
-                transactionRef: ten_tk + today,
-                orderType: tongtien,
-                amount: tongtien,
-            })
-            console.log('check link:', res);
-            window.location.href = res;
-            let res1 = await savebulkvesk({
-                arrchonmon: result,
-                ID_TK: iduser,
-                NGAY: formateDate,
-                PTTT: PTTT,
-                T_TIEN: tongtien,
-                SDT: sdt,
-                // TIEN_GIAM: tiengiam1,
-                MATT: ten_tk + today,
-                NGAY1: today2,
+            let today2 = new Date(today1).getTime();
+            console.log('check ngay:', today2)
 
-            })
-            if (res1 && res1.errCode === 0) {
-                toast.success('Đặt vé thành công')
-                //let ID_TK = this.props.location.state.iduser
-                // let res = await deleteproductcartbyidService(ID_TK)
+            if (chonmon && chonmon.length > 0) {
+                chonmon.map((chonmon, index) => {
+                    let object = {};
+                    object.ID_TK = iduser;
+                    object.TEN_TK = ten_tk;
+                    object.SDT = sdt;
+                    object.PTTT = PTTT;
+                    object.NGAY = formateDate;
+                    object.NGAY1 = today2;
+                    object.ID_GHE = chonmon.ID_GHE;
+                    object.GIA_GHE = chonmon.GIA;
+                    object.GIA_VE = chonmon.GIA_SK;
+                    object.NGAY_DIEN = NGAY_DIEN;
+                    object.SUAT_DIEN = SUAT_DIEN;
+                    object.ID_SK = ID_SK;
+                    result.push(object)
+                })
+            } else {
+                toast.error("Vui lòng chọn ghế trước khi nhấn đặt vé")
+                return;
+            }
+            console.log('check push:', result)
+            //////bulk create dat hang
+            if (PTTT === 1) {
+                let res = await savebulkvesk({
+                    arrchonmon: result,
+                    ID_TK: iduser,
+                    NGAY: formateDate,
+                    PTTT: PTTT,
+                    T_TIEN: tongtien,
+                    SDT: sdt,
+                    NGAY1: today2,
+                    ID_SK: ID_SK,
+                    // TIEN_GIAM: tiengiam1,
+                })
+
                 if (res && res.errCode === 0) {
-                    // await this.getcartbyidfromuser();
+                    toast.success('Đặt vé thành công')
+
+                    //let ID_TK = this.props.location.state.iduser
+                    // let res = await deleteproductcartbyidService(ID_TK)
+                    if (res && res.errCode === 0) {
+                        // await this.getcartbyidfromuser();
+                    }
+                    else {
+                        alert(res.errMessage)
+                    }
+
+                } else {
+                    toast.error('Đặt vé không thành công')
                 }
-                else {
-                    alert(res.errMessage)
-                }
+
 
             } else {
-                toast.error('Đặt vé không thành công')
+                let chonmon = dsghe.filter(item => item.isSelected === true)
+                //let count = chonmon.setCount((count) => count + 1, 0)
+                let tongtien = chonmon.reduce((tongtien, item) => tongtien + Number(item.GIA) + Number(item.GIA_SK), 0);
+                console.log('tong tien:', this.state)
+                let today = new Date().getTime();
+                let ten_tk = this.props.userInfo.ten_tk;
+                let formateDate = moment(new Date()).format('DD/MM/YYYY');
+                let today1 = moment(new Date()).format("YYYY/MM/DD");
+                let today2 = new Date(today1).getTime();
+                console.log('tien:', tongtien)
+                console.log('mã dơn:', today)
+                let res = await getPayment({
+                    transactionRef: ten_tk + today,
+                    orderType: tongtien,
+                    amount: tongtien,
+                })
+                console.log('check link:', res);
+                window.location.href = res;
+                let res1 = await savebulkvesk({
+                    arrchonmon: result,
+                    ID_TK: iduser,
+                    NGAY: formateDate,
+                    PTTT: PTTT,
+                    T_TIEN: tongtien,
+                    SDT: sdt,
+                    ID_SK: ID_SK,
+                    // TIEN_GIAM: tiengiam1,
+                    MATT: ten_tk + today,
+                    NGAY1: today2,
+
+                })
+                if (res1 && res1.errCode === 0) {
+                    toast.success('Đặt vé thành công')
+                    //let ID_TK = this.props.location.state.iduser
+                    // let res = await deleteproductcartbyidService(ID_TK)
+                    if (res && res.errCode === 0) {
+                        // await this.getcartbyidfromuser();
+                    }
+                    else {
+                        alert(res.errMessage)
+                    }
+
+                } else {
+                    toast.error('Đặt vé không thành công')
+                }
             }
+
 
         }
 
@@ -241,7 +259,7 @@ class DetailSuKien extends Component {
         //let count = chonmon.setCount((count) => count + 1, 0)
         let tongtien = chonmon.reduce((tongtien, item) => tongtien + Number(item.GIA) + Number(item.GIA_SK), 0);
         // let thanhtien = tongtien + tongtien1;
-        let today1 = moment(new Date()).format("YYYY-MM-DD");
+        let today1 = moment(new Date()).format("YYYY/MM/DD");
         let today2 = new Date(today1).getTime();
         console.log('tien:', today2)
 

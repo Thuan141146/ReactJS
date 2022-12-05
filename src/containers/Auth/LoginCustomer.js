@@ -135,7 +135,7 @@ class LoginCustomer extends Component {
                         <div className="col-12">
                             <button className="btn-login" onClick={() => this.dangky()}>Tạo tài khoản </button>
                         </div>
-                        <div className="col-12 ">
+                        {/* <div className="col-12 ">
                             <span className="forgot-password">Quên mật khẩu?</span>
                         </div>
                         <div className='col-12 text-center mt-3'>
@@ -144,7 +144,7 @@ class LoginCustomer extends Component {
                         <div className='col-12 social-login'>
                             <i className="fab fa-google-plus-g google"></i>
                             <i className="fab fa-facebook facebook"></i>
-                        </div>
+                        </div> */}
 
                     </div>
                 </div>

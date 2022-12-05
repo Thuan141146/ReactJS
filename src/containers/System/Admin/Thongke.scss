@@ -3,5 +3,35 @@
         .row{
             margin-left: 30px;
         }
+        .thong-ke-mon{
+            margin-top: 20px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            .col-9{
+                // border: 1px solid red;
+                width: 80%;
+
+            }
+            .chi-tiet{
+                width: 20%;
+                // border: 1px solid red;
+                font-family: 'haha';
+                color: #333;
+                font-size: 10px;
+                text-align: center;
+                .ct{
+                    margin-top: 80px;
+                    margin-left: 10px;
+                    border: 2px solid #3e95cd;
+                    width: 90%;
+                    border-radius: 15px;
+                    font-family: 'haha';
+                    color: #333;
+                    font-size: 17px;
+                }
+
+            }
+        }
     }
 }

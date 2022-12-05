@@ -21,9 +21,7 @@ export const adminMenu = [
             //     name: 'menu.admin.manage-admin', link: '/system/user-admin'
 
             // },
-            { //Quản lý bán hàng
-                name: 'menu.nhanvien.nhanvien-banhang', link: '/nhanvien/ban-hang'
-            },
+
 
         ]
     },
@@ -102,6 +100,10 @@ export const adminMenu = [
                 name: 'menu.admin.manage-thongke', link: '/system/thongke'
 
             },
+            {
+                name: 'menu.admin.manage-thongkeve', link: '/system/thongkeve'
+
+            },
             { //Quản lý danh thu
 
                 name: 'menu.nhanvien.manage-danhthu', link: '/nhanvien/danhthu'
@@ -137,17 +139,30 @@ export const adminMenu = [
             },
         ]
     },
-
-];
-export const nhanvienMenu = [
-    {
-        name: 'menu.admin.manage-user',
+    { //Quản lý bình luận
+        name: 'menu.admin.manage-bl',
         menus: [
+
             { //Quản lý bán hàng
-                name: 'menu.nhanvien.nhanvien-banhang', link: '/nhanvien/ban-hang'
+                name: 'menu.nhanvien.nhanvien-binhluan', link: '/nhanvien/binhluan'
+            },
+            { //Quản lý bán hàng
+                name: 'menu.nhanvien.nhanvien-bl', link: '/nhanvien/xembinhluan'
             },
         ]
     },
+
+
+];
+export const nhanvienMenu = [
+    // {
+    //     name: 'menu.admin.manage-user',
+    //     menus: [
+    //         { //Quản lý bán hàng
+    //             name: 'menu.nhanvien.nhanvien-binhluan', link: '/nhanvien/binhluan'
+    //         },
+    //     ]
+    // },
     {
         name: 'menu.admin.manage-dh',
         menus: [
@@ -197,7 +212,20 @@ export const nhanvienMenu = [
 
             },
         ]
-    }
+    },
+    { //Quản lý bình luận
+        name: 'menu.admin.manage-bl',
+        menus: [
+
+            { //Quản lý bán hàng
+                name: 'menu.nhanvien.nhanvien-binhluan', link: '/nhanvien/binhluan'
+            },
+
+            { //Quản lý bán hàng
+                name: 'menu.nhanvien.nhanvien-bl', link: '/nhanvien/xembinhluan'
+            },
+        ]
+    },
 
 
 

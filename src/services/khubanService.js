@@ -57,8 +57,21 @@ const guithuxacnhan = (data) => {
     // console.log('check from sevice:', data)
     return axios.post('/api/send-nhan-ban', data)
 }
+/// gui mail huy ban
+const guithuhuyban = (data) => {
+    // console.log('check from sevice:', data)
+    return axios.post('/api/send-huy-ban', data)
+}
+//// mail hủy vé
+const guithuhuyve = (data) => {
+    // console.log('check from sevice:', data)
+    return axios.post('/api/send-huy-ve', data)
+}
+const chuyenban = (data) => {
+    // console.log('check from sevice:', data)
+    return axios.post('/api/send-chuyen-ban', data)
+}
 ///add to cart
-
 const addtocart = (data) => {
     // console.log('check from sevice:', data)
     return axios.post('/api/gio-hang', data)
@@ -108,6 +121,10 @@ const xacnhanhuydon = (ID, ID_TT) => {
 const getdanhthuByDate = (data) => {
     return axios.get(`/api/get-danh-thu-ngay?NGAY=${data.NGAY}`)
 }
+///danh thu ngay
+const getdanhthuveByDate = (data) => {
+    return axios.get(`/api/get-danh-thu-ve-ngay?NGAY=${data.NGAY}`)
+}
 ////vnpay
 const getPayment = (data) => {
     return axios.post('/create_payment_url', data);
@@ -134,6 +151,14 @@ const xacnhanhuyban = (ID, ID_TT) => {
 /// chi theo ngày
 const getchiByDate = (data) => {
     return axios.get(`/api/get-phieu-chi-theo-ngay?NGAY=${data.NGAY}`)
+}
+/// get alll bao xau
+const getallbaoxaudate = (NGAY) => {
+    return axios.get(`/api/get-all-bao-xau?NGAY=${NGAY}`)
+}
+////get all bình luận
+const getallbinhluan = (NGAY, ID_MON) => {
+    return axios.get(`/api/get-all-binh-luan?NGAY=${NGAY}&ID_MON=${ID_MON}`)
 }
 /// chi theo ngày
 const getdanhthuvnpay = (data) => {
@@ -238,10 +263,27 @@ const editTTveSevice = (inputData) => {
     return axios.put('/api/edit-tt-ve', inputData);
 }
 /// thongke
-const thongke = (NGAY) => {
-    return axios.get(`/api/get-thong-ke?NGAY=${NGAY}`)
+const thongke = (NGAY1) => {
+    return axios.get(`/api/get-thong-ke?NGAY1=${NGAY1}`)
+}
+/// thong ke ve
+
+const thongkeve = (NGAY1) => {
+    return axios.get(`/api/get-thong-ke-ve?NGAY1=${NGAY1}`)
 }
 
+// delete bao xau
+const deletebaoxau = (ID_DG) => {
+    return axios.delete('/api/delete-bao-xau', {
+        data: { id: ID_DG }
+    });
+}
+// delete danh gia
+const deletedanhgia = (ID_DG) => {
+    return axios.delete('/api/delete-binh-luan', {
+        data: { id: ID_DG }
+    });
+}
 export {
     getAllKhu,
     createNewKhu,
@@ -268,6 +310,7 @@ export {
     huydon,
     xacnhanhuydon,
     getdanhthuByDate,
+    getdanhthuveByDate,
     getPayment,
     createRatingService,
     getdatbanbyid,
@@ -297,4 +340,13 @@ export {
     editTTveSevice,
     savebulkhoave,
     thongke,
+    thongkeve,
+    guithuhuyban,
+    guithuhuyve,
+    getallbaoxaudate,
+    deletedanhgia,
+    deletebaoxau,
+    chuyenban,
+    getallbinhluan,
+
 }

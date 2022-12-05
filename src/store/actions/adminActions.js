@@ -196,15 +196,15 @@ export const editAUser = (data) => {
         try {
             let res = await editUserSevice(data);
             if (res && res.errCode === 0) {
-                toast.success("Cập nhật người dùng thành công");
+                toast.success("Cập nhật thông tin thành công");
                 dispatch(editUserSuccess())
                 dispatch(fetchAllUserStart());
             } else {
-                toast.error("Cập nhật người dùng không thành công");
+                toast.error("Cập nhật thông tin không thành công");
                 dispatch(editUserFailded());
             }
         } catch (e) {
-            toast.error("Cập nhật người dùng không thành công");
+            toast.error("Cập nhật thông tin không thành công");
             dispatch(editUserFailded());
             console.log('EditUserFailded error', e)
         }

@@ -319,7 +319,7 @@ class Hoadon extends Component {
                                 suffix={'đ'}
                             />
                             </div>
-                            <div className="phi-ship">Tổng tiền hàng: <NumberFormat
+                            <div className="phi-ship">Tổng tiền giảm giá: <NumberFormat
                                 className="gia"
                                 value={tiengiam1}
                                 displayType={'text'}

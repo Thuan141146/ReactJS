@@ -33,6 +33,7 @@ import Dangky from './Auth/Dangky';
 import CTdatban from './Khachhang/Datban/CTdatban';
 import Allve from './Khachhang/Sukien/Allve';
 import Detailve from './Khachhang/Sukien/Detailve';
+import Update from './Auth/Update';
 
 class App extends Component {
 
@@ -85,7 +86,7 @@ class App extends Component {
                                     <Route path={path.DETAIL_DATBAN} component={CTdatban} />
                                     <Route path={path.ALL_VE} component={Allve} />
                                     <Route path={path.CHITIET_VE} component={Detailve} />
-
+                                    <Route path={path.UPDATE} component={Update} />
                                     <Route path={'/nhanvien/'} component={userIsAuthenticated(Nhanvien)} />
 
                                 </Switch>`

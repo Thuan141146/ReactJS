@@ -22,9 +22,10 @@ class Giohang extends Component {
         this.props.fetchPTTTStart();
         if (this.props.userInfo) {
             this.setState({
-                diachi: this.props.userInfo.diachi
+                diachi: this.props.userInfo.diachi,
             })
         }
+
 
         // let ID_TK = this.props.userInfo.id
         // console.log('check gio hang:', ID_TK)
@@ -69,9 +70,11 @@ class Giohang extends Component {
         }
         if (prevProps.userInfo !== this.props.userInfo) {
             this.setState({
-                diachi: this.props.userInfo.diachi
+                diachi: this.props.userInfo.diachi,
+
             })
         }
+
     }
     handleOnchangEmail = (event) => {
         this.setState({
@@ -147,7 +150,7 @@ class Giohang extends Component {
         console.log('tong tien:', this.state)
         let formateDate = moment(new Date()).format('DD/MM/YYYY');
         let today1 = moment(new Date()).format("YYYY/MM/DD");
-        let today2 = new Date(today1).getTime() / 10;
+        let today2 = new Date(today1).getTime();
 
         console.log('check ngay:', today2)
 
@@ -215,7 +218,7 @@ class Giohang extends Component {
             let tongdon = tongtien + ship - tiengiam1;
             let today = new Date().getTime();
             let today1 = moment(new Date()).format("YYYY/MM/DD");
-            let today2 = new Date(today1).getTime() / 10;
+            let today2 = new Date(today1).getTime();
             let formateDate = moment(new Date()).format('DD/MM/YYYY');
             console.log('tien:', tongdon)
             console.log('mã dơn:', today)
@@ -287,7 +290,7 @@ class Giohang extends Component {
         // let today = new Date().getTime();
         // console.log('check ngay', ID_PTTT);
         let listdata = this.state.listdata;
-        console.log('check props:', this.props)
+        console.log('check props:', listdata)
         const { userInfo } = this.props
 
         let chonmon = listdata.filter(item => item.isSelected === true)

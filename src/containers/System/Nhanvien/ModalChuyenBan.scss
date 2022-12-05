@@ -1,0 +1,40 @@
+.modal-content{
+    .modal-header{
+        .h5{
+            font-family: 'haha';
+            font-size: 25px;
+            color: white;
+        }
+        button{
+            background-color: transparent;
+            border: none;
+            color: white;
+            font-size: 20px;
+        }
+      
+        
+    }
+    .modal-body{
+        .row{
+            .tt{
+                font-family: 'haha';
+                font-size: 20px;
+                color:  #333;
+            }
+            .col-6{
+                label{
+                    font-family: 'haha';
+                    font-size: 20px;
+                    color:  #333;
+                }
+            }
+        }
+    }
+    .modal-footer{
+        button{
+            width: 65px;
+
+        }
+       
+    }
+}

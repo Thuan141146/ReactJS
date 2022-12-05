@@ -159,7 +159,7 @@ class Dangky extends Component {
                     <div className="Dangky-content">
                         <div className="col-12 text-login"> Đăng ký tài khoản </div>
                         <div className="col-12 form-group Dangky-input">
-                            <label>Tên đăng nhập:</label>
+                            <label>Tên đăng nhập</label>
                             <input type="text"
                                 className="form-control"
                                 placeholder="Nhập tên đăng nhập"
@@ -179,7 +179,7 @@ class Dangky extends Component {
                             <label>Số điện thoại</label>
                             <input className="form-control" type="text"
                                 value={sdt}
-                                placeholder="Nhập số điiện thoại "
+                                placeholder="Nhập số điện thoại "
                                 onChange={(event) => { this.onChangeInput(event, 'sdt') }}
                             />
                         </div>
@@ -187,7 +187,7 @@ class Dangky extends Component {
                             <label>Địa chỉ</label>
                             <input className="form-control" type="text"
                                 value={diachi}
-                                placeholder="Nhập dịa chỉ "
+                                placeholder="Nhập địa chỉ "
                                 onChange={(event) => { this.onChangeInput(event, 'diachi') }}
                             />
                         </div>

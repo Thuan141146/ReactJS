@@ -17,6 +17,7 @@ import Khuyenmai from '../containers/System/Admin/Khuyenmai';
 import ghe from '../containers/System/Admin/ghe';
 import Qlghesk from '../containers/System/Admin/Qlghesk';
 import Thongke from '../containers/System/Admin/Thongke';
+import Thongkeve from '../containers/System/Admin/Thongkeve';
 
 class System extends Component {
     render() {
@@ -42,6 +43,7 @@ class System extends Component {
                             <Route path="/system/manage-ghe" component={ghe} />
                             <Route path="/system/manage-ttghe" component={Qlghesk} />
                             <Route path="/system/thongke" component={Thongke} />
+                            <Route path="/system/thongkeve" component={Thongkeve} />
 
 
 

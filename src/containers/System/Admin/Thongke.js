@@ -5,7 +5,7 @@ import * as actions from '../../../store/actions'
 import './Thongke.scss';
 import { toast } from 'react-toastify';
 // import { getAllStaff, createNewStaffService, deleteStaffService, editStaffService } from '../../services/userServices'
-import { thongke } from '../../../services/khubanService';
+import { thongke, thongkeve } from '../../../services/khubanService';
 import DatePicker from '../../../components/Input/DatePicker';
 import moment from 'moment';
 import { Bar } from "react-chartjs-2";
@@ -18,9 +18,11 @@ class Thongke extends Component {
         super(props);
         this.state = {
             revenueDate: [],
+
             selectedValue: '',
             ngay_ban: '',
             last7: [],
+
             timeStart: moment().subtract(7, 'day').startOf('day'),
             timeEnd: moment().startOf('day')
         }
@@ -28,7 +30,8 @@ class Thongke extends Component {
 
     async componentDidMount() {
 
-        this.getArrDays()
+        this.getArrDays();
+
 
     }
 
@@ -46,14 +49,14 @@ class Thongke extends Component {
         let timeEnd = this.state.timeEnd;
         let totalDay = timeEnd.diff(timeStart, 'day')
         let dateList = []
-        for (let i = 1; i < totalDay; i++) {
+        for (let i = 1; i <= totalDay; i++) {
             let dateClone = timeStart.clone()
             dateList.push(dateClone.add(i, 'day').unix() * 1000)
         }
 
 
 
-        console.log('dateClone', dateList);
+        //console.log('dateClone', dateList);
 
 
         let arr7Days = []
@@ -64,14 +67,16 @@ class Thongke extends Component {
         this.setState({
             last7: arr7Days
         })
+
         console.log("arr7Days", arr7Days)
+
     }
 
     handleOnChangeDataPicker = (key, value) => {
         this.setState({
             [key]: moment(value[0])
         })
-        console.log('value', value)
+        // console.log('value', value)
 
     }
 
@@ -79,7 +84,7 @@ class Thongke extends Component {
         this.setState({
             selectedValue: { ...this.state.selectedValue, [key]: value }
         })
-
+        // console.log("check ngay", value)
         let response = await thongke(value);
         if (response && response.errCode === 0) {
             this.setState({
@@ -89,16 +94,15 @@ class Thongke extends Component {
         }
     }
 
-
-
     render() {
         let { revenueDate, last7, timeStart, timeEnd } = this.state;
 
-        let revenue = revenueDate.reduce((total, item) => total + Number(item.T_TIEN), 0);
+        //let revenue = last7.reduce((revenue, item) => revenue + Number(item.data[0].total), 0);
 
-        console.log('check last7', last7)
-        console.log('check timeStart', timeStart)
-        console.log('check timeEnd', timeEnd)
+
+        //console.log('check', last7)
+        //console.log('check bat dau', timeStart)
+        //console.log('check ngay ket thuc', timeEnd)
         return (
             <div className='thongke-container'>
                 <div className='thongke-content'>
@@ -106,13 +110,13 @@ class Thongke extends Component {
                         QUẢN LÝ KINH DOANH GOLD COFFEE
                     </div>
                     <div className="title">
-                        QUẢN LÝ THỐNG KÊ DANH THU
+                        QUẢN LÝ THỐNG KÊ DANH THU MÓN
                     </div>
                     <div className="row">
                         <div className='col-5'>
                             <span>Ngày bắt đầu</span>
                             <DatePicker
-                                onChange={(value) => this.handleOnChangeDataPicker('ngaybd', value)}
+                                onChange={(value) => this.handleOnChangeDataPicker('timeStart', value)}
                                 className='form-control'
 
                             />
@@ -121,57 +125,73 @@ class Thongke extends Component {
                         <div className='col-5'>
                             <span>Ngày kết thúc</span>
                             <DatePicker
-                                onChange={(value) => this.handleOnChangeDataPicker('ngaykt', value)}
+                                onChange={(value) => this.handleOnChangeDataPicker('timeEnd', value)}
                                 className='form-control'
 
                             />
                         </div>
 
                     </div>
-                    <div className='chart'>
-                        <Bar
-                            data={{
-                                labels: last7.map(day => {
-                                    return day.data.map(item => moment(new Date(Number(item.NGAY1))).format("DD/MM"))
-                                }),
-                                datasets: [
-                                    {
-                                        label: 'Doanh thu',
-                                        backgroundColor: 'rgba(0, 255, 0, 0.2)',
-                                        borderColor: 'rgb(0, 255, 0)',
-                                        borderWidth: 1,
-                                        barThickness: 40,
-                                        data: last7.map(revenue => {
-                                            return revenue.data.map(total => total.total)
+                    <div className="thong-ke-mon">
+                        <div className='col-9'>
+                            <Bar
+                                data={{
+                                    labels: last7.map(day => {
+                                        return day.data.map(item => moment(new Date(Number(item.NGAY1))).format("DD/MM"))
+                                    }),
+                                    // labels: lastve7.map(day => {
+                                    //     return day.data.map(item => moment(new Date(Number(item.NGAY1))).format("DD/MM"))
+                                    // }),
+                                    datasets: [
+                                        {
+                                            label: 'Doanh thu món',
+                                            //label: 'Doanh thu món',
+                                            backgroundColor: '#3e95cd',
+                                            borderColor: 'black',
+                                            borderWidth: 1,
+                                            barThickness: 20,
+                                            data: last7.map(revenue => {
+                                                return revenue.data.map(total => total.total)
+                                            }),
+                                            // data1: last7.map(revenue => {
+                                            //     return revenue.data.reduce((total, item) => total + Number(item.total), 0);
 
-                                            // return revenue.data.map(ticket => {
-                                            //     return ticket.ticketData.reduce((total, item) => total + Number(item.so_luong_ve) * Number(item.don_gia_ve), 0)
                                             // })
+
                                         }
-                                        )
 
-                                    }
-                                ]
-                            }}
+                                    ],
 
-                            options={{
-                                plugins: {
-                                    title: {
-                                        display: true,
-                                        text: "Doanh thu 7 ngày gần nhất"
+                                }}
+
+                                options={{
+                                    plugins: {
+                                        title: {
+                                            display: true,
+                                            text: "Doanh thu ngày gần nhất"
+                                        },
                                     },
-                                },
 
-                                scales: {
-                                    xAxes: [{
-                                        barThickness: 4,  // number (pixels) or 'flex'
+                                    scales: {
+                                        xAxes: [{
+                                            barThickness: 4,  // number (pixels) or 'flex'
 
-                                    }]
-                                }
-                            }}
-                        />
+                                        }]
+                                    }
+                                }}
+                            />
 
+                        </div>
+                        {/* <div className='chi-tiet'>
+                            <div className='ct'>
+
+                                <div>Tổng danh thu món</div>
+                                <div>tiền: 30.000đ</div>
+                            </div>
+
+                        </div> */}
                     </div>
+
                 </div>
             </div>
         );

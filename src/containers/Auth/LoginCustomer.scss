@@ -1,7 +1,11 @@
 .logincustomer-background {
+    background: url('../../assets/GOLD\ COFFEE1.png') center center no-repeat;
+    background-size: 100% 100%;
     height: 100%;
-    background-size: 100% 200%;
-    background: url(../../assets/NEN.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
     font-family: "work sans";
 
     .logincustomer-container{
@@ -15,7 +19,7 @@
         font-size: 18px;
         right: 0;
         left: 0;
-        height: 470px;
+        height: 350px;
     
         .logincustomer-content{
             padding: 12px;
